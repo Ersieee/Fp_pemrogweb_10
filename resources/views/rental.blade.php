@@ -36,7 +36,7 @@
         'City Car' => [
           ['img' => 'city/ayla.jpg', 'nama' => 'Ayla', 'harga' => 300000, 'desc' => 'Hemat bahan bakar, lincah di kota.'],
           ['img' => 'city/etios.png', 'nama' => 'Etios', 'harga' => 400000, 'desc' => 'Stylish dan responsif.'],
-          ['img' => 'city/brio.png', 'nama' => 'Brio', 'harga' =>`` 250000, 'desc' => 'Praktis & lega buat anak muda.'],
+          ['img' => 'city/brio.png', 'nama' => 'Brio', 'harga' => 250000, 'desc' => 'Praktis & lega buat anak muda.'],
         ],
         'Premium Car' => [
           ['img' => 'premium/hiace.png', 'nama' => 'Hiace Commuter', 'harga' => 1700000, 'desc' => 'Muatan banyak, nyaman jarak jauh.'],
