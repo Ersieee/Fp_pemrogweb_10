@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog | Rental Mobil Jogja</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="service-page">
+  <!-- Navbar -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="rental.html">Rental</a></li>
+      <li><a href="pelayanan.html" class="active">Pelayanan</a></li>
+      <li><a href="about.html">Tentang Kami</a></li>
+      <li><a href="contact.html">Kontak</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul>
+  </nav>
+
+  <!-- Konten Blog -->
+  <main class="blog-container">
+    <h1>Rekomendasi Kuliner & Hotel di Yogyakarta</h1>
+
+    <!-- Kuliner -->
+    <section class="blog-section">
+      <h2>Kuliner Terenak</h2>
+      <div class="blog-grid">
+        <article class="blog-card">
+          <img src="gudeg yu djum.png" alt="Gudeg Yu Djum">
+          <h3>Gudeg Yu Djum</h3>
+          <p>Ikon kuliner Jogja yang legendaris! Gudeg manis khas Jogja yang disajikan dengan krecek, telur, dan ayam kampung ini punya cita rasa autentik. Lokasinya strategis dan wajib dikunjungi oleh pencinta makanan tradisional.</p>
+          <a href="https://maps.app.goo.gl/yKqb2tCXMTZu9HNM8" target="_blank">📍 Cek Lokasi</a>
+        </article>
+        <article class="blog-card">
+          <img src="Sate Klathak Pak Pong.png" alt="Sate Klathak Pak Pong">
+          <h3>Sate Klathak Pak Pong</h3>
+          <p>Sate kambing unik yang hanya dibumbui garam dan merica, lalu dibakar dengan tusukan besi. Rasanya gurih, lembut, dan sangat khas! Tempatnya selalu ramai, jadi siap-siap antre demi kelezatannya.</p>
+          <a href="https://maps.app.goo.gl/BDjHmUVktFHsRrWu5" target="_blank">📍 Cek Lokasi</a>
+        </article>
+        <article class="blog-card">
+          <img src="Bakmi Jawa Mbah Gito.png" alt="Bakmi Jawa Mbah Gito">
+          <h3>Bakmi Jawa Mbah Gito</h3>
+          <p>Makan malam dengan suasana ndeso? Di sinilah tempatnya. Bakmi Jawa Mbah Gito terkenal dengan mie rebus dan gorengnya yang dimasak dengan anglo. Tempatnya penuh ornamen kayu dan suasana tradisional yang bikin betah.</p>
+          <a href="https://maps.app.goo.gl/Wm5ndDbDywKDJN6J9" target="_blank">📍 Cek Lokasi</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Hotel -->
+    <section class="blog-section">
+      <h2>Hotel Terbaik</h2>
+      <div class="blog-grid">
+        <article class="blog-card">
+          <img src="Hotel Tentrem.png" alt="Hotel Tentrem">
+          <h3>Hotel Tentrem</h3>
+          <p>Hotel bintang lima yang mengusung kemewahan khas budaya Jawa. Terletak di pusat kota, Tentrem menawarkan kenyamanan kelas atas dengan desain elegan, spa eksklusif, dan kolam renang yang tenang. Cocok untuk liburan mewah atau perjalanan bisnis yang berkelas.</p>
+          <a href="https://maps.app.goo.gl/RvP7EvswCqrMSemd8" target="_blank">📍 Cek Lokasi</a>
+        </article>
+        <article class="blog-card">
+          <img src="Royal ambrrukmo.png" alt="Hotel Tentrem">
+          <h3>Royal ambarrukmo </h3>
+          <p>Hotel bersejarah yang dulunya adalah istana kerajaan, kini menjadi hotel mewah dengan nuansa tradisional yang kental. Kamu bisa menikmati kemegahan arsitektur Jawa, lengkap dengan taman klasik dan pengalaman kuliner khas kerajaan.</p>
+          <a href="https://maps.app.goo.gl/e2yvJb7qCjAduo8U7" target="_blank">📍 Cek Lokasi</a>
+        </article>
+        <article class="blog-card">
+          <img src="Greenhost Boutique Hotel.png" alt="Greenhost Boutique Hotel">
+          <h3>Greenhost Boutique Hotel</h3>
+          <p>Hotel eco-friendly dengan desain artistik dan konsep ramah lingkungan. Cocok untuk traveler muda yang peduli lingkungan dan suka tempat "Instagramable". Greenhost punya urban farm di atap dan suasana yang tenang di tengah hiruk-pikuk kota.</p>
+          <a href="https://maps.app.goo.gl/mmYtDarCzuNigi5E7" target="_blank">📍 Cek Lokasi</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>Jam Layanan</h3>
+        <ul>
+          <li><strong>Telephone Sales</strong><br>Senin–Jumat, 08:00–17:00</li>
+          <li><strong>Customer Service</strong><br>Senin–Sabtu, 09:00–20:00</li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Media Sosial</h3>
+        <ul>
+          <li><i class="fab fa-instagram"></i> @anugerah.x</li>
+          <li><i class="fab fa-whatsapp"></i> +62 853-9911-1636</li>
+          <li><i class="fab fa-facebook"></i> Pace_Rental</li>
+          <li><i class="fab fa-tiktok"></i> Anugerah.x</li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Jam Layanan</h3>
+        <p>Jl. Kedon Agung dusun Nganti, Sendangadi, Kec. Mlati, Kabupaten Sleman, <br>Daerah Istimewa Yogyakarta 55284</p>
+      </div>
+      <div class="footer-column">
+        <h3>Payment Partner</h3>
+        <div class="payment-grid">
+          <img src="bri.png" alt="BRI">
+          <img src="bca.png" alt="BCA">
+          <img src="mandiri.png" alt="Mandiri">
+          <img src="visa.png" alt="Visa">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Footer dinamis -->
+  <div id="footer-placeholder"></div>
+  <script src="script.js"></script>
+</body>
+</html>
