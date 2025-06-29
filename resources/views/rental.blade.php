@@ -8,7 +8,7 @@
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
-<body class="bg-gray-100">
+<body id="body" class="bg-gray-100">
 
   <!-- Navbar -->
   <nav class="bg-blue-900 p-4 text-white">
@@ -31,7 +31,7 @@
         'Family Car' => [
           ['img' => 'family/fortuner.jpg', 'nama' => 'Fortuner', 'harga' => 800000, 'desc' => 'Gagah, nyaman, dan bertenaga.'],
           ['img' => 'family/avanza.jpg', 'nama' => 'Avanza', 'harga' => 350000, 'desc' => 'Irit, nyaman, cocok buat harian.'],
-          ['img' => 'family/innova.jpg', 'nama' => 'Innova', 'harga' => 500000, 'desc' => 'Luas, nyaman buat keluarga besar.'],
+          ['img' => 'family/innova.png', 'nama' => 'Innova', 'harga' => 500000, 'desc' => 'Luas, nyaman buat keluarga besar.'],
         ],
         'City Car' => [
           ['img' => 'city/ayla.jpg', 'nama' => 'Ayla', 'harga' => 300000, 'desc' => 'Hemat bahan bakar, lincah di kota.'],
@@ -67,8 +67,8 @@
   </div>
 
   <!-- Modal -->
-  <div id="sewaModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
-    <div class="bg-white p-6 rounded-lg max-w-md w-full relative">
+  <div id="sewaModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center overflow-auto">
+    <div class="bg-white p-6 rounded-lg max-w-md w-full relative overflow-y-auto max-h-screen">
       <button class="absolute top-2 right-4 text-2xl font-bold text-gray-500 hover:text-black" onclick="closeModal()">&times;</button>
       <h2 class="text-2xl font-bold mb-4">Form Penyewaan Mobil</h2>
       <form id="formSewa">
@@ -106,10 +106,12 @@
       document.getElementById('hari').value = '';
       document.getElementById('total').value = '';
       document.getElementById('sewaModal').classList.remove('hidden');
+      document.getElementById('body').classList.add('overflow-hidden');
     }
 
     function closeModal() {
       document.getElementById('sewaModal').classList.add('hidden');
+      document.getElementById('body').classList.remove('overflow-hidden');
     }
 
     document.getElementById('hari').addEventListener('input', () => {
