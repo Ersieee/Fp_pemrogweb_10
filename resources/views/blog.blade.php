@@ -8,8 +8,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body class="blog-page">
-  <!-- Navbar -->
 
+   <!-- Navbar -->
  <nav>
     <ul>
       <li><a href="{{ url('/') }}">Home</a></li>
@@ -18,25 +18,15 @@
       <li><a href="{{ url('/about') }}" >Tentang Kami</a></li>
       <li><a href="{{ url('/contact') }}">Kontak</a></li>
       <li><a href="{{ url('/blog') }}" class="active">Blog</a></li>
-      <li><a href="{{ url('/admin') }}" >Admin</a></li>
-
-<nav class="bg-blue-900 p-4 text-white">
-    <ul class="flex justify-center gap-6">
-      <li><a href="{{ url('/') }}" class="hover:text-blue-300">Home</a></li>
-      <li><a href="{{ url('/rental') }}" class="text-blue-300 font-bold">Rental</a></li>
-      <li><a href="{{ url('/pelayanan') }}" class="hover:text-blue-300">Pelayanan</a></li>
-      <li><a href="{{ url('/about') }}" class="hover:text-blue-300">Tentang Kami</a></li>
-      <li><a href="{{ url('/contact') }}" class="hover:text-blue-300">Kontak</a></li>
-      <li><a href="{{ url('/blog') }}" class="hover:text-blue-300">Blog</a></li>
-    <li><a href="/admin" title="Admin"><i class="fas fa-user-circle navbar-admin-icon"></i></a></li>
-
+       <li><a href="/admin" title="Admin"><i class="fas fa-user-circle navbar-admin-icon"></i></a></li>
     </ul>
   </nav>
+
   <!-- Konten Blog -->
   <main class="blog-container">
     <h1>Rekomendasi Kuliner & Hotel di Yogyakarta</h1>
 
-    <!-- Kuliner -->
+     <!-- Kuliner -->
     <section class="blog-section">
       <h2>Kuliner Terenak</h2>
       <div class="blog-grid">
@@ -61,7 +51,7 @@
       </div>
     </section>
 
-    <!-- Hotel -->
+     <!-- Hotel -->
     <section class="blog-section">
       <h2>Hotel Terbaik</h2>
       <div class="blog-grid">
@@ -87,7 +77,7 @@
     </section>
   </main>
 
-  <!-- Footer -->
+   <!-- Footer -->
   <footer>
     <div class="footer-container">
       <div class="footer-column">
@@ -97,10 +87,10 @@
           <li><strong>Customer Service</strong><br>Senin–Sabtu, 09:00–20:00</li>
         </ul>
       </div>
-
-       <div class="footer-column">
+        <div class="footer-column">
         <h3>Media Sosial</h3>
         <ul>
+
           <li><i class="fab fa-instagram"></i> <a href="#">@anugerah.x</a></li>
           <li><i class="fab fa-whatsapp"></i> <a href="#">+62 853-9911-1636</a></li>
           <li><i class="fab fa-facebook"></i> <a href="#">Pace_Rental</a></li>
@@ -108,10 +98,11 @@
         </ul>
       </div>
 
-<div class="footer-column">
+ <div class="footer-column">
         <h3>Alamat</h3>
         <p>Jl. Kedon Agung dusun Nganti, Sendangadi, Kec. Mlati, Kabupaten Sleman, <br>Daerah Istimewa Yogyakarta 55284</p>
       </div>
+
       <div class="footer-column">
         <h3>Payment Partner</h3>
         <div class="payment-grid">
@@ -122,8 +113,8 @@
         </div>
       </div>
     </div>
+
   </footer>
 
-
-</body>
+ </body>
 </html>

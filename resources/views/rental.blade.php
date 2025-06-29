@@ -6,12 +6,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-</head>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+ </head>
 <body class="blog-page">
   <!-- Navbar -->
  <nav>
@@ -22,27 +18,11 @@
       <li><a href="{{ url('/about') }}" >Tentang Kami</a></li>
       <li><a href="{{ url('/contact') }}">Kontak</a></li>
       <li><a href="{{ url('/blog') }}" >Blog</a></li>
-      <li><a href="{{ url('/admin') }}" >Admin</a></li>
+   <li><a href="/admin" title="Admin"><i class="fas fa-user-circle navbar-admin-icon"></i></a></li>
     </ul>
   </nav>
 
-
-<main class="blog-container">
-
-<nav class="bg-blue-900 p-4 text-white">
-    <ul class="flex justify-center gap-6">
-      <li><a href="{{ url('/') }}" class="hover:text-blue-300">Home</a></li>
-      <li><a href="{{ url('/rental') }}" class="text-blue-300 font-bold">Rental</a></li>
-      <li><a href="{{ url('/pelayanan') }}" class="hover:text-blue-300">Pelayanan</a></li>
-      <li><a href="{{ url('/about') }}" class="hover:text-blue-300">Tentang Kami</a></li>
-      <li><a href="{{ url('/contact') }}" class="hover:text-blue-300">Kontak</a></li>
-      <li><a href="{{ url('/blog') }}" class="hover:text-blue-300">Blog</a></li>
-    <li><a href="/admin" title="Admin"><i class="fas fa-user-circle navbar-admin-icon"></i></a></li>
-    </ul>
-  </nav>
-
-
-<div class="max-w-6xl mx-auto py-10 px-4">
+ <div class="max-w-6xl mx-auto py-10 px-4">
   <h2 class="text-3xl font-bold text-center mb-8">Daftar Mobil Tersedia</h2>
 
  @php
@@ -88,8 +68,7 @@
   <div class="bg-white p-6 rounded-lg max-w-md w-full relative overflow-y-auto max-h-screen">
     <button class="absolute top-2 right-4 text-2xl font-bold text-gray-500 hover:text-black" onclick="closeModal()">&times;</button>
     <h2 class="text-2xl font-bold mb-4">Form Penyewaan Mobil</h2>
-
-    <form action="{{ url('/invoice') }}" method="GET">
+     <form action="{{ url('/invoice') }}" method="GET">
       <label>Nama</label>
       <input type="text" name="nama" id="nama" required class="w-full border p-2 rounded mb-3">
       <label>Email</label>
@@ -108,9 +87,7 @@
     </form>
   </div>
 </div>
-
-</main>
-
+ </main>
 <script>
   function openModal(mobil, harga) {
     document.getElementById('mobil').value = mobil;
@@ -132,8 +109,7 @@
     document.getElementById('total').value = (harga * hari) || '';
   });
 </script>
-
-<!-- Footer -->
+ <!-- Footer -->
   <footer>
     <div class="footer-container">
       <div class="footer-column">
@@ -143,8 +119,7 @@
           <li><strong>Customer Service</strong><br>Senin–Sabtu, 09:00–20:00</li>
         </ul>
       </div>
-
-       <div class="footer-column">
+        <div class="footer-column">
         <h3>Media Sosial</h3>
         <ul>
           <li><i class="fab fa-instagram"></i> <a href="#">@anugerah.x</a></li>
@@ -153,8 +128,7 @@
           <li><i class="fab fa-tiktok"></i> <a href="#">Anugerah.x</a></li>
         </ul>
       </div>
-
-    <div class="footer-column">
+     <div class="footer-column">
         <h3>Alamat</h3>
         <p>Jl. Kedon Agung dusun Nganti, Sendangadi, Kec. Mlati, Kabupaten Sleman, <br>Daerah Istimewa Yogyakarta 55284</p>
       </div>
@@ -169,7 +143,5 @@
       </div>
     </div>
   </footer>
-
-
-</body>
+ </body>
 </html>

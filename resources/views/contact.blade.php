@@ -4,24 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kontak - Rental Mobil</title>
-
-  <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
-  <nav>
-    <ul>
-      <li><a href="{{ url('/') }}">Home</a></li>
-      <li><a href="{{ url('/rental') }}">Rental</a></li>
-      <li><a href="{{ url('/pelayanan') }}">Pelayanan</a></li>
-      <li><a href="{{ url('/about') }}">Tentang Kami</a></li>
-      <li><a href="{{ url('/contact') }}" class="active">Kontak</a></li>
-      <li><a href="{{ url('/blog') }}">Blog</a></li>
-      <li><a href="{{ url('/admin') }}" >Admin</a></li>
-
+  
    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
+
 <body>
  <nav class="bg-blue-900 p-4 text-white">
     <ul class="flex justify-center gap-6">
@@ -32,11 +18,9 @@
       <li><a href="{{ url('/contact') }}" class="hover:text-blue-300">Kontak</a></li>
       <li><a href="{{ url('/blog') }}" class="hover:text-blue-300">Blog</a></li>
     <li><a href="/admin" title="Admin"><i class="fas fa-user-circle navbar-admin-icon"></i></a></li>
-
-    </ul>
+     </ul>
   </nav>
-
-  <main>
+   <main>
     <section class="map-section">
       <h2>Lokasi Kami</h2>
       <div class="map-container" style="text-align: center; margin-bottom: 40px;">
@@ -45,8 +29,7 @@
           referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </section>
-
-    <section class="contact-form-section" style="display: flex; flex-wrap: wrap; justify-content: space-between; padding: 0 5%;">
+     <section class="contact-form-section" style="display: flex; flex-wrap: wrap; justify-content: space-between; padding: 0 5%;">
       <div style="flex: 1 1 60%; min-width: 300px;">
         <h2>Send us mail</h2>
         <form>
@@ -63,24 +46,20 @@
           <button type="submit">Submit</button>
         </form>
       </div>
-
-      <div style="flex: 1 1 35%; min-width: 250px; margin-top: 30px;">
+       <div style="flex: 1 1 35%; min-width: 250px; margin-top: 30px;">
         <h3>📞 Phone</h3>
         <p><strong>Telp:</strong> (0274) 4340640</p>
         <p><strong>Tsel / WA:</strong> 081227722211</p>
         <p><strong>Tsel / WA:</strong> 0852 9299 9937</p>
-        <p><strong>XL:</strong> 081903785511</p>
-
+         <p><strong>XL:</strong> 081903785511</p>
         <h3>🕒 Office 24 Hours</h3>
         <p>Monday to Sunday</p>
-
-        <h3>📍 Visit</h3>
+         <h3>📍 Visit</h3>
         <p><strong>Head Office:</strong> Jl. Gambir Anom No. 26 Pandeyan, Umbulharjo, Kota Yogyakarta 55161</p>
       </div>
     </section>
   </main>
-
-  <!-- Footer -->
+   <!-- Footer -->
   <footer>
     <div class="footer-container">
       <div class="footer-column">
@@ -89,8 +68,7 @@
           <li><strong>Telephone Sales</strong><br>Senin–Jumat, 08:00–17:00</li>
           <li><strong>Customer Service</strong><br>Senin–Sabtu, 09:00–20:00</li>
         </ul>
-      </div>
-
+       </div>
        <div class="footer-column">
         <h3>Media Sosial</h3>
         <ul>
@@ -100,8 +78,7 @@
           <li><i class="fab fa-tiktok"></i> <a href="#">Anugerah.x</a></li>
         </ul>
       </div>
-
-<div class="footer-column">
+ <div class="footer-column">
         <h3>Alamat</h3>
         <p>Jl. Kedon Agung dusun Nganti, Sendangadi, Kec. Mlati, Kabupaten Sleman, <br>Daerah Istimewa Yogyakarta 55284</p>
       </div>
@@ -116,11 +93,8 @@
       </div>
     </div>
   </footer>
-
-
-  <!-- Footer dinamis -->
+   <!-- Footer dinamis -->
   <div id="footer-placeholder"></div>
   <script src="script.js"></script>
-  
-</body>
+ </body>
 </html>

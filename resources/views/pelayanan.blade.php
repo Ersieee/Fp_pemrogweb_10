@@ -7,8 +7,7 @@
  <link rel="stylesheet" href="{{ asset('css/style.css') }}">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-
-<body class="blog-page">
+ <body class="blog-page">
   <!-- Navbar -->
  <nav>
     <ul>
@@ -18,25 +17,10 @@
       <li><a href="{{ url('/about') }}" >Tentang Kami</a></li>
       <li><a href="{{ url('/contact') }}">Kontak</a></li>
       <li><a href="{{ url('/blog') }}" >Blog</a></li>
-      <li><a href="{{ url('/admin') }}" >Admin</a></li>
-
-<body class="bg-gray-100 text-gray-900 font-sans">
-
-  {{-- Navbar --}}
-  <nav class="bg-blue-900 p-4 text-white">
-    <ul class="flex justify-center gap-6">
-      <li><a href="{{ url('/') }}" class="hover:text-blue-300">Home</a></li>
-      <li><a href="{{ url('/rental') }}" class="text-blue-300 font-bold">Rental</a></li>
-      <li><a href="{{ url('/pelayanan') }}" class="hover:text-blue-300">Pelayanan</a></li>
-      <li><a href="{{ url('/about') }}" class="hover:text-blue-300">Tentang Kami</a></li>
-      <li><a href="{{ url('/contact') }}" class="hover:text-blue-300">Kontak</a></li>
-      <li><a href="{{ url('/blog') }}" class="hover:text-blue-300">Blog</a></li>
-    <li><a href="/admin" title="Admin"><i class="fas fa-user-circle navbar-admin-icon"></i></a></li>
-
+      <li><a href="/admin" title="Admin"><i class="fas fa-user-circle navbar-admin-icon"></i></a></li>
     </ul>
   </nav>
-
-  <main class="blog-container">
+   <main class="blog-container">
 
  <!-- Layanan -->
 <section class="py-12 bg-gray-50">
@@ -58,8 +42,7 @@
     </div>
   </div>
 </section>
-
-</main>
+ </main>
 
   <!-- Footer -->
   <footer>
@@ -81,13 +64,11 @@
           <li><i class="fab fa-tiktok"></i> <a href="#">Anugerah.x</a></li>
         </ul>
       </div>
-
- <div class="footer-column">
+  <div class="footer-column">
         <h3>Alamat</h3>
         <p>Jl. Kedon Agung dusun Nganti, Sendangadi, Kec. Mlati, Kabupaten Sleman, <br>Daerah Istimewa Yogyakarta 55284</p>
       </div>
-
-      <div class="footer-column">
+       <div class="footer-column">
         <h3>Payment Partner</h3>
         <div class="payment-grid">
           <img src="images/bri.png" alt="BRI">
@@ -98,7 +79,6 @@
       </div>
     </div>
   </footer>
-
-
-</body></html>
+</body>
+</html>
 

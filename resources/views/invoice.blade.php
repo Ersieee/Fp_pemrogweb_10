@@ -41,8 +41,7 @@
     }
     .btn-kembali:hover { background: #5a6268; }
   </style>
-</head>
-
+ </head>
 <body>
 
 @php
@@ -58,8 +57,7 @@
 <div class="invoice-container">
   <h1>Terima Kasih!</h1>
   <h2>Harap Lengkapi Pembayaran</h2>
-
-  <table border="0">
+   <table border="0">
     <tr>
       <td>
         <h3>Detail Pembelian</h3>
@@ -68,10 +66,8 @@
         <p>Status Transaksi: <strong style="color:orange">PENDING</strong></p>
         <p>Status Pembayaran: <strong style="color:red">UNPAID</strong></p>
         <p>Total Pembayaran: <strong>Rp {{ number_format($total, 0, ',', '.') }}</strong></p>
-
-        <button onclick="openModal()" class="btn-rincian">Rincian Pembayaran</button>
-
-        <div id="paymentModal" class="modal" style="display:none">
+         <button onclick="openModal()" class="btn-rincian">Rincian Pembayaran</button>
+         <div id="paymentModal" class="modal" style="display:none">
           <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
             <h2>Rincian Pembayaran</h2>
@@ -86,8 +82,7 @@
           </div>
         </div>
       </td>
-
-      <td class="qr-section" style="text-align:center;">
+       <td class="qr-section" style="text-align:center;">
         <h3>QRIS Pembayaran</h3>
         <img src="{{ asset('images/qris.png') }}" alt="QRIS">
         <p style="margin-top:10px;">Scan QR untuk bayar</p>
@@ -95,10 +90,8 @@
       </td>
     </tr>
   </table>
-
-</div>
-
-<script>
+ </div>
+ <script>
 function openModal() {
   document.getElementById("paymentModal").style.display = "block";
 }
@@ -106,6 +99,5 @@ function closeModal() {
   document.getElementById("paymentModal").style.display = "none";
 }
 </script>
-
-</body>
+ </body>
 </html>
