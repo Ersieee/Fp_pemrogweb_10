@@ -16,6 +16,7 @@
       <li><a href="{{ url('/about') }}">Tentang Kami</a></li>
       <li><a href="{{ url('/contact') }}" class="active">Kontak</a></li>
       <li><a href="{{ url('/blog') }}">Blog</a></li>
+      <li><a href="{{ url('/admin') }}" >Admin</a></li>
     </ul>
   </nav>
 

@@ -1,45 +1,56 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tentang Kami - PACE RENTAL</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login User</title>
   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body class="blog-page">
+<body>
 
-  <nav>
+<body class="blog-page">
+  <!-- Navbar -->
+ <nav>
     <ul>
       <li><a href="{{ url('/') }}">Home</a></li>
       <li><a href="{{ url('/rental') }}">Rental</a></li>
       <li><a href="{{ url('/pelayanan') }}">Pelayanan</a></li>
-      <li><a href="{{ url('/about') }}" class="active">Tentang Kami</a></li>
+      <li><a href="{{ url('/about') }}" >Tentang Kami</a></li>
       <li><a href="{{ url('/contact') }}">Kontak</a></li>
-      <li><a href="{{ url('/blog') }}">Blog</a></li>
-      <li><a href="{{ url('/admin') }}" >Admin</a></li>
+      <li><a href="{{ url('/blog') }}" >Blog</a></li>
+      <li><a href="{{ url('/admin') }}" class="active">Admin</a></li>
     </ul>
   </nav>
 
-  <div class="container fade-in">
-    <div class="profile">
-      <img src="{{ asset('images/logo1.png') }}" alt="Logo PACE RENTAL" class="logo">
-      <div class="text-center-box">
-        <h3>Selamat Datang Di PACE RENTAL</h3>
-        <p>PACE RENTAL adalah pilihan tepat ...</p>
-        <p>Di PACE RENTAL, kami percaya ...</p>
-        <p class="quote">"Mengutamakan kenyamanan dan keselamatan ..."</p>
-      </div>
+  {{-- Form Login --}}
+  <main class="admin-container">
+    <div class="admin-header">
+      <h2><i class="fas fa-sign-in-alt"></i> Login Pengguna</h2>
     </div>
 
-    <h2>Tentang Kami</h2>
-    <div class="text-center-box">
-      <p>Kami adalah penyedia layanan ...</p>
-      <p>Kami percaya bahwa kenyamanan ...</p>
+    <div class="login-form-container">
+      <form action="/login" method="POST">
+        @csrf
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required placeholder="Masukkan email"><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required placeholder="Masukkan password"><br><br>
+
+        <button type="submit" class="login-btn">Login</button>
+      </form>
     </div>
+  </main>
+
+  {{-- Register Link --}}
+  <div class="register-link">
+    <p>Belum punya akun? <a href="/register" class="text-blue-600 hover:underline">Daftar Sekarang</a></p>
   </div>
 
- <footer>
+  
+  <!-- Footer -->
+  <footer>
     <div class="footer-container">
       <div class="footer-column">
         <h3>Jam Layanan</h3>
@@ -63,7 +74,6 @@
         <h3>Alamat</h3>
         <p>Jl. Kedon Agung dusun Nganti, Sendangadi, Kec. Mlati, Kabupaten Sleman, <br>Daerah Istimewa Yogyakarta 55284</p>
       </div>
-
       <div class="footer-column">
         <h3>Payment Partner</h3>
         <div class="payment-grid">
@@ -76,13 +86,5 @@
     </div>
   </footer>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const container = document.querySelector(".container");
-      container.style.opacity = "1";
-      container.style.transform = "translateY(0)";
-      container.style.transition = "opacity 1s ease, transform 1s ease";
-    });
-  </script>
 </body>
 </html>
