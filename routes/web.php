@@ -39,8 +39,3 @@ Route::get('/invoice', [InvoiceController::class, 'showInvoice'])->name('invoice
 // Admin
 Route::get('/admin', function () {
     return view('admin');
-<<<<<<< HEAD
-});
-=======
-});
->>>>>>> 3721346922eda165a16c6dd3651770e8d160eed3
