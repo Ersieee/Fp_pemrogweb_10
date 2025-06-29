@@ -4,8 +4,13 @@
   <meta charset="UTF-8">
   <title>Rental Mobil</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+<<<<<<< HEAD
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+=======
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+>>>>>>> 3721346922eda165a16c6dd3651770e8d160eed3
 </head>
 <body class="blog-page">
   <!-- Navbar -->
@@ -21,7 +26,21 @@
     </ul>
   </nav>
 
+<<<<<<< HEAD
 <main class="blog-container">
+=======
+<nav class="bg-blue-900 p-4 text-white">
+    <ul class="flex justify-center gap-6">
+      <li><a href="{{ url('/') }}" class="hover:text-blue-300">Home</a></li>
+      <li><a href="{{ url('/rental') }}" class="text-blue-300 font-bold">Rental</a></li>
+      <li><a href="{{ url('/pelayanan') }}" class="hover:text-blue-300">Pelayanan</a></li>
+      <li><a href="{{ url('/about') }}" class="hover:text-blue-300">Tentang Kami</a></li>
+      <li><a href="{{ url('/contact') }}" class="hover:text-blue-300">Kontak</a></li>
+      <li><a href="{{ url('/blog') }}" class="hover:text-blue-300">Blog</a></li>
+    <li><a href="/admin" title="Admin"><i class="fas fa-user-circle navbar-admin-icon"></i></a></li>
+    </ul>
+  </nav>
+>>>>>>> 3721346922eda165a16c6dd3651770e8d160eed3
 
 <div class="max-w-6xl mx-auto py-10 px-4">
   <h2 class="text-3xl font-bold text-center mb-8">Daftar Mobil Tersedia</h2>

@@ -1,4 +1,5 @@
-<footer>
+<!-- resources/views/partials/footer.blade.php -->
+<footer class="mt-10">
   <div class="footer-container">
     <div class="footer-column">
       <h3>Jam Layanan</h3>
@@ -11,17 +12,26 @@
     <div class="footer-column">
       <h3>Media Sosial</h3>
       <ul>
-        <li><i class="fab fa-instagram"></i> @anugerah.x</li>
-        <li><i class="fab fa-whatsapp"></i> +62 853-9911-1636</li>
-        <li><i class="fab fa-facebook"></i> Pace_Rental</li>
-        <li><i class="fab fa-tiktok"></i> Anugerah.x</li>
+        <li><i class="fab fa-instagram"></i> <a href="#">@anugerah.x</a></li>
+        <li><i class="fab fa-whatsapp"></i> <a href="#">+62 853-9911-1636</a></li>
+        <li><i class="fab fa-facebook"></i> <a href="#">Pace_Rental</a></li>
+        <li><i class="fab fa-tiktok"></i> <a href="#">Anugerah.x</a></li>
       </ul>
     </div>
 
     <div class="footer-column">
       <h3>Alamat</h3>
-      <p>Jl. Kebon Agung, Nganti, Sendangadi, Mlati, Sleman, Yogyakarta 55284</p>
+      <p>Jl. Kedon Agung dusun Nganti, Sendangadi, Kec. Mlati, Kabupaten Sleman,<br>Daerah Istimewa Yogyakarta 55284</p>
+    </div>
+
+    <div class="footer-column">
+      <h3>Payment Partner</h3>
+      <div class="payment-grid">
+        <img src="{{ asset('images/bri.png') }}" alt="BRI">
+        <img src="{{ asset('images/shopeepay.png') }}" alt="ShopeePay">
+        <img src="{{ asset('images/mandiri.png') }}" alt="Mandiri">
+        <img src="{{ asset('images/visa.png') }}" alt="Visa">
+      </div>
     </div>
   </div>
 </footer>
-

@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kontak - Rental Mobil</title>
+<<<<<<< HEAD
   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -17,6 +18,21 @@
       <li><a href="{{ url('/contact') }}" class="active">Kontak</a></li>
       <li><a href="{{ url('/blog') }}">Blog</a></li>
       <li><a href="{{ url('/admin') }}" >Admin</a></li>
+=======
+   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+ <nav class="bg-blue-900 p-4 text-white">
+    <ul class="flex justify-center gap-6">
+      <li><a href="{{ url('/') }}" class="hover:text-blue-300">Home</a></li>
+      <li><a href="{{ url('/rental') }}" class="text-blue-300 font-bold">Rental</a></li>
+      <li><a href="{{ url('/pelayanan') }}" class="hover:text-blue-300">Pelayanan</a></li>
+      <li><a href="{{ url('/about') }}" class="hover:text-blue-300">Tentang Kami</a></li>
+      <li><a href="{{ url('/contact') }}" class="hover:text-blue-300">Kontak</a></li>
+      <li><a href="{{ url('/blog') }}" class="hover:text-blue-300">Blog</a></li>
+    <li><a href="/admin" title="Admin"><i class="fas fa-user-circle navbar-admin-icon"></i></a></li>
+>>>>>>> 3721346922eda165a16c6dd3651770e8d160eed3
     </ul>
   </nav>
 
@@ -84,7 +100,11 @@
           <li><i class="fab fa-tiktok"></i> <a href="#">Anugerah.x</a></li>
         </ul>
       </div>
+<<<<<<< HEAD
 
+=======
+      
+>>>>>>> 3721346922eda165a16c6dd3651770e8d160eed3
 <div class="footer-column">
         <h3>Alamat</h3>
         <p>Jl. Kedon Agung dusun Nganti, Sendangadi, Kec. Mlati, Kabupaten Sleman, <br>Daerah Istimewa Yogyakarta 55284</p>
@@ -100,6 +120,13 @@
       </div>
     </div>
   </footer>
+<<<<<<< HEAD
+=======
+
+  <!-- Footer dinamis -->
+  <div id="footer-placeholder"></div>
+  <script src="script.js"></script>
+>>>>>>> 3721346922eda165a16c6dd3651770e8d160eed3
 
 </body>
 </html>

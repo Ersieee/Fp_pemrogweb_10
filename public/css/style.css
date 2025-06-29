@@ -407,6 +407,11 @@ body.about-page {
 }
 
 
+
+
+
+
+
 /* Ikon pembayaran */
 .payment-grid {
   display: grid;
@@ -846,7 +851,11 @@ footer {
   font-size: 0.95rem;
 }
 
-
+footer {
+  clear: both;
+  z-index: 1;
+  position: relative;
+}
 
 
 /* BLOG  */
@@ -1026,6 +1035,7 @@ footer {
 }
 
 /* ===================== ADMIN ===================== */
+<<<<<<< HEAD
 
 .admin-table th,
 .admin-table td {
@@ -1034,6 +1044,15 @@ footer {
   border-bottom: 1px solid #ddd;
 }
 
+=======
+.admin-table th,
+.admin-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+>>>>>>> 3721346922eda165a16c6dd3651770e8d160eed3
 .admin-table th {
   background-color: #003366;
   color: white;

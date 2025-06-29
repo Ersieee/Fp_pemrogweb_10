@@ -1,11 +1,10 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="id">
 <head>
   <meta charset="UTF-8">
   <title>Invoice Pembayaran</title>
   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
   <style>
-    /* CSS khusus invoice di sini kalau perlu */
     .invoice-container {
       max-width: 900px;
       margin: 30px auto;
@@ -46,6 +45,16 @@
 
 <body>
 
+@php
+  // Ambil data dari query string
+  $mobil = request('mobil');
+  $harga = (int) request('harga');
+  $hari = (int) request('hari');
+  $total = (int) request('total');
+  $invoice = 'INV' . rand(100000000, 999999999);
+  $batasWaktu = now()->addDay()->format('d M Y H:i') . ' WIB';
+@endphp
+
 <div class="invoice-container">
   <h1>Terima Kasih!</h1>
   <h2>Harap Lengkapi Pembayaran</h2>
@@ -69,6 +78,7 @@
             <p><strong>Nomor Invoice:</strong> {{ $invoice }}</p>
             <p><strong>Produk:</strong> Sewa Mobil {{ $mobil ?? '-' }}</p>
             <p><strong>Harga Sewa Mobil:</strong> Rp {{ number_format($harga, 0, ',', '.') }}</p>
+            <p><strong>Jumlah Hari:</strong> {{ $hari }} hari</p>
             <p><strong>Total Pembayaran:</strong> Rp {{ number_format($total, 0, ',', '.') }}</p>
             <p><strong>Metode Pembayaran:</strong> QRIS</p>
             <p><strong>Status Pembayaran:</strong> UNPAID</p>
