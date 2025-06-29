@@ -1,5 +1,5 @@
-const modal = document.getElementById("sewaModal");  // kecil semua
-const span = document.getElementsByClassName("close")[0];  // kecil semua
+const modal = document.getElementById("sewaModal");
+const span = document.getElementsByClassName("close")[0];
 const hargaInput = document.getElementById("harga");
 const hariInput = document.getElementById("hari");
 const totalInput = document.getElementById("total");
@@ -37,7 +37,7 @@ hariInput.addEventListener("input", () => {
   }
 });
 
-// Submit form kirim data via URL query string
+// Submit form kirim data via URL query string ke Laravel route /invoice
 document.getElementById("formSewa").addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -49,7 +49,8 @@ document.getElementById("formSewa").addEventListener("submit", function (e) {
   const harga = document.getElementById("harga").value;
   const total = document.getElementById("total").value;
 
-  const url = `invoice.html?nama=${encodeURIComponent(nama)}&email=${encodeURIComponent(email)}&tanggal=${tanggal}&hari=${hari}&mobil=${mobil}&harga=${harga}&total=${total}`;
+  // Arahkan ke route Laravel, bukan ke invoice.html
+  const url = `/invoice?nama=${encodeURIComponent(nama)}&email=${encodeURIComponent(email)}&tanggal=${tanggal}&hari=${hari}&mobil=${mobil}&harga=${harga}&total=${total}`;
   
   window.location.href = url;
 });
