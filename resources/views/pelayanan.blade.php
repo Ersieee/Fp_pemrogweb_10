@@ -7,7 +7,7 @@
  <link rel="stylesheet" href="{{ asset('css/style.css') }}">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<<<<<<< HEAD
+
 <body class="blog-page">
   <!-- Navbar -->
  <nav>
@@ -19,7 +19,7 @@
       <li><a href="{{ url('/contact') }}">Kontak</a></li>
       <li><a href="{{ url('/blog') }}" >Blog</a></li>
       <li><a href="{{ url('/admin') }}" >Admin</a></li>
-=======
+
 <body class="bg-gray-100 text-gray-900 font-sans">
 
   {{-- Navbar --}}
@@ -32,7 +32,7 @@
       <li><a href="{{ url('/contact') }}" class="hover:text-blue-300">Kontak</a></li>
       <li><a href="{{ url('/blog') }}" class="hover:text-blue-300">Blog</a></li>
     <li><a href="/admin" title="Admin"><i class="fas fa-user-circle navbar-admin-icon"></i></a></li>
->>>>>>> 3721346922eda165a16c6dd3651770e8d160eed3
+
     </ul>
   </nav>
 
@@ -100,13 +100,5 @@
   </footer>
 
 
-</body>
-</html>
-<<<<<<< HEAD
+</body></html>
 
-
-
-
-
-=======
->>>>>>> 3721346922eda165a16c6dd3651770e8d160eed3

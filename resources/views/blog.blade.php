@@ -9,7 +9,7 @@
 </head>
 <body class="blog-page">
   <!-- Navbar -->
-<<<<<<< HEAD
+
  <nav>
     <ul>
       <li><a href="{{ url('/') }}">Home</a></li>
@@ -19,7 +19,7 @@
       <li><a href="{{ url('/contact') }}">Kontak</a></li>
       <li><a href="{{ url('/blog') }}" class="active">Blog</a></li>
       <li><a href="{{ url('/admin') }}" >Admin</a></li>
-=======
+
 <nav class="bg-blue-900 p-4 text-white">
     <ul class="flex justify-center gap-6">
       <li><a href="{{ url('/') }}" class="hover:text-blue-300">Home</a></li>
@@ -29,7 +29,7 @@
       <li><a href="{{ url('/contact') }}" class="hover:text-blue-300">Kontak</a></li>
       <li><a href="{{ url('/blog') }}" class="hover:text-blue-300">Blog</a></li>
     <li><a href="/admin" title="Admin"><i class="fas fa-user-circle navbar-admin-icon"></i></a></li>
->>>>>>> 3721346922eda165a16c6dd3651770e8d160eed3
+
     </ul>
   </nav>
   <!-- Konten Blog -->

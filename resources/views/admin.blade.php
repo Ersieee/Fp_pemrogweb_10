@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login User</title>
   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-<<<<<<< HEAD
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -26,7 +26,7 @@
 
   {{-- Form Login --}}
   <main>
-=======
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
@@ -48,7 +48,7 @@
 
   {{-- Form Login --}}
   <main class="admin-container">
->>>>>>> 3721346922eda165a16c6dd3651770e8d160eed3
+
     <div class="admin-header">
       <h2><i class="fas fa-sign-in-alt"></i> Login Pengguna</h2>
     </div>
@@ -71,8 +71,6 @@
   <div class="register-link">
     <p>Belum punya akun? <a href="/register" class="text-blue-600 hover:underline">Daftar Sekarang</a></p>
   </div>
-<<<<<<< HEAD
-
 
   <!-- Footer -->
 =======
@@ -81,7 +79,7 @@
     <p>&copy; 2023 PACE RENTAL. All rights reserved.</p>
   </footer>
   {{-- Footer --}}
->>>>>>> 3721346922eda165a16c6dd3651770e8d160eed3
+
   <footer>
     <div class="footer-container">
       <div class="footer-column">
@@ -92,7 +90,7 @@
         </ul>
       </div>
 
-<<<<<<< HEAD
+
        <div class="footer-column">
         <h3>Media Sosial</h3>
         <ul>
@@ -115,7 +113,7 @@
           <img src="images/mandiri.png" alt="Mandiri">
           <img src="images/visa.png" alt="Visa">
         </div>
-=======
+
       <div class="footer-column">
         <h3>Media Sosial</h3>
         <ul>
@@ -129,14 +127,14 @@
       <div class="footer-column">
         <h3>Alamat</h3>
         <p>Jl. Kebon Agung, Nganti, Sendangadi, Mlati, Sleman, Yogyakarta 55284</p>
->>>>>>> 3721346922eda165a16c6dd3651770e8d160eed3
+
       </div>
     </div>
   </footer>
 
 </body>
-<<<<<<< HEAD
+
 </html>
-=======
+
 </html>
->>>>>>> 3721346922eda165a16c6dd3651770e8d160eed3
+
