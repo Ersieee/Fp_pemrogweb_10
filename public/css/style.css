@@ -908,3 +908,8 @@ footer {
   text-decoration: none;
   font-weight: bold;
 }
+footer {
+  clear: both;
+  z-index: 1;
+  position: relative;
+}

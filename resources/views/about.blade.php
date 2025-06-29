@@ -37,7 +37,7 @@
     </div>
   </div>
 
-  <footer>
+ <footer>
     <div class="footer-container">
       <div class="footer-column">
         <h3>Jam Layanan</h3>
@@ -47,7 +47,7 @@
         </ul>
       </div>
 
-      <div class="footer-column">
+       <div class="footer-column">
         <h3>Media Sosial</h3>
         <ul>
           <li><i class="fab fa-instagram"></i> <a href="#">@anugerah.x</a></li>
@@ -56,19 +56,19 @@
           <li><i class="fab fa-tiktok"></i> <a href="#">Anugerah.x</a></li>
         </ul>
       </div>
-
-      <div class="footer-column">
+      
+<div class="footer-column">
         <h3>Alamat</h3>
-        <p>Jl. Kebon Agung dusun Nganti ...</p>
+        <p>Jl. Kedon Agung dusun Nganti, Sendangadi, Kec. Mlati, Kabupaten Sleman, <br>Daerah Istimewa Yogyakarta 55284</p>
       </div>
-
+      
       <div class="footer-column">
         <h3>Payment Partner</h3>
         <div class="payment-grid">
-          <img src="{{ asset('images/bri.png') }}" alt="BRI Logo">
-          <img src="{{ asset('images/bca.png') }}" alt="BCA Logo">
-          <img src="{{ asset('images/mandiri.png') }}" alt="Mandiri Logo">
-          <img src="{{ asset('images/visa.png') }}" alt="Visa Logo">
+          <img src="images/bri.png" alt="BRI">
+          <img src="images/shopeepay.png" alt="BCA">
+          <img src="images/mandiri.png" alt="Mandiri">
+          <img src="images/visa.png" alt="Visa">
         </div>
       </div>
     </div>

@@ -22,29 +22,29 @@
     </div>
   </nav>
 
-  {{-- Layanan --}}
-  <section class="py-12 bg-gray-50">
-    <div class="container mx-auto px-4 grid md:grid-cols-3 gap-6">
-      <div class="bg-white p-6 rounded-lg shadow-md">
-        <h3 class="text-xl font-bold mb-2">City Car</h3>
-        <p class="text-gray-700 mb-4">Penyediaan kendaraan hemat bahan bakar dan lincah.</p>
-        <a href="#" class="text-blue-600 hover:underline">Selengkapnya</a>
-      </div>
-      <div class="bg-white p-6 rounded-lg shadow-md">
-        <h3 class="text-xl font-bold mb-2">Luxury Car</h3>
-        <p class="text-gray-700 mb-4">Mobil mewah dengan fitur canggih.</p>
-        <a href="#" class="text-blue-600 hover:underline">Selengkapnya</a>
-      </div>
-      <div class="bg-white p-6 rounded-lg shadow-md">
-        <h3 class="text-xl font-bold mb-2">Family Car</h3>
-        <p class="text-gray-700 mb-4">Mobil keluarga yang luas dan nyaman.</p>
-        <a href="#" class="text-blue-600 hover:underline">Selengkapnya</a>
-      </div>
+ <!-- Layanan -->
+<section class="py-12 bg-gray-50">
+  <div class="container mx-auto px-4 grid md:grid-cols-3 gap-6">
+    <div class="bg-white p-6 rounded-lg shadow-md">
+      <h3 class="text-xl font-bold mb-2">City Car</h3>
+      <p class="text-gray-700 mb-4">Penyediaan kendaraan hemat bahan bakar dan lincah.</p>
+      <a href="/rental" class="text-blue-600 hover:underline">Selengkapnya</a>
     </div>
-  </section>
+    <div class="bg-white p-6 rounded-lg shadow-md">
+      <h3 class="text-xl font-bold mb-2">Luxury Car</h3>
+      <p class="text-gray-700 mb-4">Mobil mewah dengan fitur canggih.</p>
+      <a href="/rental" class="text-blue-600 hover:underline">Selengkapnya</a>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow-md">
+      <h3 class="text-xl font-bold mb-2">Family Car</h3>
+      <p class="text-gray-700 mb-4">Mobil keluarga yang luas dan nyaman.</p>
+      <a href="/rental" class="text-blue-600 hover:underline">Selengkapnya</a>
+    </div>
+  </div>
+</section>
 
-  {{-- Footer --}}
-<footer>
+  <!-- Footer -->
+  <footer>
     <div class="footer-container">
       <div class="footer-column">
         <h3>Jam Layanan</h3>
@@ -54,7 +54,7 @@
         </ul>
       </div>
 
-      <div class="footer-column">
+       <div class="footer-column">
         <h3>Media Sosial</h3>
         <ul>
           <li><i class="fab fa-instagram"></i> <a href="#">@anugerah.x</a></li>
@@ -63,23 +63,30 @@
           <li><i class="fab fa-tiktok"></i> <a href="#">Anugerah.x</a></li>
         </ul>
       </div>
-
-      <div class="footer-column">
+      
+<div class="footer-column">
         <h3>Alamat</h3>
-        <p>Jl. Kebon Agung dusun Nganti ...</p>
+        <p>Jl. Kedon Agung dusun Nganti, Sendangadi, Kec. Mlati, Kabupaten Sleman, <br>Daerah Istimewa Yogyakarta 55284</p>
       </div>
-
+      
       <div class="footer-column">
         <h3>Payment Partner</h3>
         <div class="payment-grid">
-          <img src="{{ asset('images/bri.png') }}" alt="BRI Logo">
-          <img src="{{ asset('images/bca.png') }}" alt="BCA Logo">
-          <img src="{{ asset('images/mandiri.png') }}" alt="Mandiri Logo">
-          <img src="{{ asset('images/visa.png') }}" alt="Visa Logo">
+          <img src="images/bri.png" alt="BRI">
+          <img src="images/shopeepay.png" alt="BCA">
+          <img src="images/mandiri.png" alt="Mandiri">
+          <img src="images/visa.png" alt="Visa">
         </div>
       </div>
     </div>
   </footer>
+
+  <!-- Footer dinamis -->
+  <div id="footer-placeholder"></div>
+  <script src="script.js"></script>
+</body>
+</html>
+
 
 </body>
 </html>
