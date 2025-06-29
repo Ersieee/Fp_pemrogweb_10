@@ -16,7 +16,7 @@
       <li><a href="{{ url('/pelayanan') }}">Pelayanan</a></li>
       <li><a href="{{ url('/about') }}" >Tentang Kami</a></li>
       <li><a href="{{ url('/contact') }}">Kontak</a></li>
-      <li><a href="{{ url('/blog') }}">Blog</a></li>
+      <li><a href="{{ url('/blog') }}" class="active">Blog</a></li>
     </ul>
   </nav>
 
@@ -112,6 +112,6 @@
     </div>
   </footer>
 
-  
+
 </body>
 </html>

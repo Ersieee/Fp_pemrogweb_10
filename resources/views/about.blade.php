@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    
   <nav>
     <ul>
       <li><a href="{{ url('/') }}">Home</a></li>
@@ -56,12 +57,12 @@
           <li><i class="fab fa-tiktok"></i> <a href="#">Anugerah.x</a></li>
         </ul>
       </div>
-      
+
 <div class="footer-column">
         <h3>Alamat</h3>
         <p>Jl. Kedon Agung dusun Nganti, Sendangadi, Kec. Mlati, Kabupaten Sleman, <br>Daerah Istimewa Yogyakarta 55284</p>
       </div>
-      
+
       <div class="footer-column">
         <h3>Payment Partner</h3>
         <div class="payment-grid">

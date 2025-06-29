@@ -7,19 +7,20 @@
  <link rel="stylesheet" href="{{ asset('css/style.css') }}">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body class="bg-gray-100 text-gray-900 font-sans">
-
-  {{-- Navbar --}}
-  <nav>
+<body class="blog-page">
+  <!-- Navbar -->
+ <nav>
     <ul>
       <li><a href="{{ url('/') }}">Home</a></li>
       <li><a href="{{ url('/rental') }}">Rental</a></li>
-      <li><a href="{{ url('/pelayanan') }}">Pelayanan</a></li>
+      <li><a href="{{ url('/pelayanan') }}" class="active" >Pelayanan</a></li>
       <li><a href="{{ url('/about') }}" >Tentang Kami</a></li>
       <li><a href="{{ url('/contact') }}">Kontak</a></li>
-      <li><a href="{{ url('/blog') }}">Blog</a></li>
+      <li><a href="{{ url('/blog') }}" >Blog</a></li>
     </ul>
   </nav>
+
+  <main class="blog-container">
 
  <!-- Layanan -->
 <section class="py-12 bg-gray-50">
@@ -41,6 +42,8 @@
     </div>
   </div>
 </section>
+
+</main>
 
   <!-- Footer -->
   <footer>

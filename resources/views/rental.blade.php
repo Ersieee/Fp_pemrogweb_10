@@ -7,18 +7,18 @@
   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body id="body" class="bg-gray-100">
-
-<nav class="bg-blue-900 p-4 text-white">
-  <ul class="flex justify-center gap-6">
-    <li><a href="{{ url('/') }}" class="hover:text-blue-300">Home</a></li>
-    <li><a href="{{ url('/rental') }}" class="text-blue-300 font-bold">Rental</a></li>
-    <li><a href="{{ url('/pelayanan') }}" class="hover:text-blue-300">Pelayanan</a></li>
-    <li><a href="{{ url('/about') }}" class="hover:text-blue-300">Tentang Kami</a></li>
-    <li><a href="{{ url('/contact') }}" class="hover:text-blue-300">Kontak</a></li>
-    <li><a href="{{ url('/blog') }}" class="hover:text-blue-300">Blog</a></li>
-  </ul>
-</nav>
+<body class="blog-page">
+  <!-- Navbar -->
+ <nav>
+    <ul>
+      <li><a href="{{ url('/') }}">Home</a></li>
+      <li><a href="{{ url('/rental') }}" class="active">Rental</a></li>
+      <li><a href="{{ url('/pelayanan') }}" >Pelayanan</a></li>
+      <li><a href="{{ url('/about') }}" >Tentang Kami</a></li>
+      <li><a href="{{ url('/contact') }}">Kontak</a></li>
+      <li><a href="{{ url('/blog') }}" >Blog</a></li>
+    </ul>
+  </nav>
 
 <main class="blog-container">
 
@@ -89,7 +89,7 @@
   </div>
 </div>
 
-</main> 
+</main>
 
 <script>
   function openModal(mobil, harga) {

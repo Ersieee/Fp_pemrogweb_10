@@ -6,21 +6,22 @@
   <title>Home - Pace Rental</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="css/style.css">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body class="bg-gray-100">
-
+<body class="blog-page">
   <!-- Navbar -->
-  <nav class="bg-blue-900 text-white p-4">
-    <ul class="flex justify-center gap-6">
-      <li><a href="{{ url('/') }}" class="font-bold hover:text-blue-300">Home</a></li>
-      <li><a href="{{ url('/rental') }}" class="hover:text-blue-300">Rental</a></li>
-      <li><a href="{{ url('/pelayanan') }}" class="hover:text-blue-300">Pelayanan</a></li>
-      <li><a href="{{ url('/about') }}" class="hover:text-blue-300">Tentang Kami</a></li>
-      <li><a href="{{ url('/contact') }}" class="hover:text-blue-300">Kontak</a></li>
-      <li><a href="{{ url('/blog') }}" class="hover:text-blue-300">Blog</a></li>
+ <nav>
+    <ul>
+      <li><a href="{{ url('/') }}" class="active" >Home</a></li>
+      <li><a href="{{ url('/rental') }}">Rental</a></li>
+      <li><a href="{{ url('/pelayanan') }}">Pelayanan</a></li>
+      <li><a href="{{ url('/about') }}" >Tentang Kami</a></li>
+      <li><a href="{{ url('/contact') }}">Kontak</a></li>
+      <li><a href="{{ url('/blog') }}" >Blog</a></li>
     </ul>
   </nav>
+
+  <main>
 
   <!-- Carousel -->
   <header class="relative h-screen overflow-hidden">
@@ -37,6 +38,8 @@
       <a href="{{ url('/rental') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded">Lihat Mobil</a>
     </div>
   </header>
+
+  </main>
 
   <style>
     @keyframes slide {
