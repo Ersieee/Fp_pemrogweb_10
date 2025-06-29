@@ -11,15 +11,16 @@
 <body id="body" class="bg-gray-100">
 
 <nav class="bg-blue-900 p-4 text-white">
-  <ul class="flex justify-center gap-6">
-    <li><a href="{{ url('/') }}" class="hover:text-blue-300">Home</a></li>
-    <li><a href="{{ url('/rental') }}" class="text-blue-300 font-bold">Rental</a></li>
-    <li><a href="{{ url('/pelayanan') }}" class="hover:text-blue-300">Pelayanan</a></li>
-    <li><a href="{{ url('/about') }}" class="hover:text-blue-300">Tentang Kami</a></li>
-    <li><a href="{{ url('/contact') }}" class="hover:text-blue-300">Kontak</a></li>
-    <li><a href="{{ url('/blog') }}" class="hover:text-blue-300">Blog</a></li>
-  </ul>
-</nav>
+    <ul class="flex justify-center gap-6">
+      <li><a href="{{ url('/') }}" class="hover:text-blue-300">Home</a></li>
+      <li><a href="{{ url('/rental') }}" class="text-blue-300 font-bold">Rental</a></li>
+      <li><a href="{{ url('/pelayanan') }}" class="hover:text-blue-300">Pelayanan</a></li>
+      <li><a href="{{ url('/about') }}" class="hover:text-blue-300">Tentang Kami</a></li>
+      <li><a href="{{ url('/contact') }}" class="hover:text-blue-300">Kontak</a></li>
+      <li><a href="{{ url('/blog') }}" class="hover:text-blue-300">Blog</a></li>
+    <li><a href="/admin" title="Admin"><i class="fas fa-user-circle navbar-admin-icon"></i></a></li>
+    </ul>
+  </nav>
 
 <div class="max-w-6xl mx-auto py-10 px-4">
   <h2 class="text-3xl font-bold text-center mb-8">Daftar Mobil Tersedia</h2>

@@ -5,20 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home - Pace Rental</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 </head>
 <body class="bg-gray-100">
 
   <!-- Navbar -->
-  <nav class="bg-blue-900 text-white p-4">
+ <nav class="bg-blue-900 p-4 text-white">
     <ul class="flex justify-center gap-6">
-      <li><a href="{{ url('/') }}" class="font-bold hover:text-blue-300">Home</a></li>
-      <li><a href="{{ url('/rental') }}" class="hover:text-blue-300">Rental</a></li>
+      <li><a href="{{ url('/') }}" class="hover:text-blue-300">Home</a></li>
+      <li><a href="{{ url('/rental') }}" class="text-blue-300 font-bold">Rental</a></li>
       <li><a href="{{ url('/pelayanan') }}" class="hover:text-blue-300">Pelayanan</a></li>
       <li><a href="{{ url('/about') }}" class="hover:text-blue-300">Tentang Kami</a></li>
       <li><a href="{{ url('/contact') }}" class="hover:text-blue-300">Kontak</a></li>
       <li><a href="{{ url('/blog') }}" class="hover:text-blue-300">Blog</a></li>
+    <li><a href="/admin" title="Admin"><i class="fas fa-user-circle navbar-admin-icon"></i></a></li>
     </ul>
   </nav>
 

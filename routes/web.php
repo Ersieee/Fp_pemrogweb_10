@@ -35,3 +35,8 @@ Route::get('/blog', function () {
 use App\Http\Controllers\InvoiceController;
 
 Route::get('/invoice', [InvoiceController::class, 'showInvoice'])->name('invoice.show');
+
+// Admin
+Route::get('/admin', function () {
+    return view('admin');
+});
