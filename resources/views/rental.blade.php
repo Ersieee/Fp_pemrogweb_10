@@ -7,6 +7,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body id="body" class="bg-gray-100">
 
@@ -152,6 +153,7 @@
         <h3>Alamat</h3>
         <p>Jl. Kedon Agung dusun Nganti, Sendangadi, Kec. Mlati, Kabupaten Sleman, <br>Daerah Istimewa Yogyakarta 55284</p>
       </div>
+
       <div class="footer-column">
         <h3>Payment Partner</h3>
         <div class="payment-grid">
@@ -164,8 +166,9 @@
     </div>
   </footer>
 
-  <!-- Footer dinamis -->
+<!-- Footer dinamis -->
   <div id="footer-placeholder"></div>
-  <script src="script.js"></script>
+  <script src="{{ asset('js/script.js') }}"></script>
+
 </body>
 </html>

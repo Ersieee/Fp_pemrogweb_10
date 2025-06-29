@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pelayanan Kami - PACE RENTAL</title>
- <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body class="bg-gray-100 text-gray-900 font-sans">
 
@@ -68,7 +69,7 @@
         <h3>Alamat</h3>
         <p>Jl. Kedon Agung dusun Nganti, Sendangadi, Kec. Mlati, Kabupaten Sleman, <br>Daerah Istimewa Yogyakarta 55284</p>
       </div>
-      
+
       <div class="footer-column">
         <h3>Payment Partner</h3>
         <div class="payment-grid">
@@ -81,11 +82,9 @@
     </div>
   </footer>
 
-  <!-- Footer dinamis -->
+<!-- Footer dinamis -->
   <div id="footer-placeholder"></div>
-  <script src="script.js"></script>
-</body>
-</html>
+  <script src="{{ asset('js/script.js') }}"></script>
 
 
 </body>
