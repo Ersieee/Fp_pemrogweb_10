@@ -39,3 +39,4 @@ Route::get('/invoice', [InvoiceController::class, 'showInvoice'])->name('invoice
 // Admin
 Route::get('/admin', function () {
     return view('admin');
+});
