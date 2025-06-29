@@ -95,7 +95,7 @@
           <li><i class="fab fa-tiktok"></i> <a href="#">Anugerah.x</a></li>
         </ul>
       </div>
-      
+
 <div class="footer-column">
         <h3>Alamat</h3>
         <p>Jl. Kedon Agung dusun Nganti, Sendangadi, Kec. Mlati, Kabupaten Sleman, <br>Daerah Istimewa Yogyakarta 55284</p>
@@ -112,8 +112,6 @@
     </div>
   </footer>
 
-  <!-- Footer dinamis -->
-  <div id="footer-placeholder"></div>
-  <script src="script.js"></script>
+  
 </body>
 </html>
