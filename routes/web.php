@@ -7,10 +7,10 @@ Route::get('/', function () {
     return view('home');
 });
 
-// Rental
-Route::get('/rental', function () {
-    return view('rental');
-});
+use App\Http\Controllers\RentalController;
+
+Route::get('/rental', [RentalController::class, 'index'])->name('rental.index');
+
 
 // Pelayanan
 Route::get('/pelayanan', function () {
@@ -31,3 +31,7 @@ Route::get('/contact', function () {
 Route::get('/blog', function () {
     return view('blog');
 });
+
+use App\Http\Controllers\InvoiceController;
+
+Route::get('/invoice', [InvoiceController::class, 'showInvoice'])->name('invoice.show');

@@ -10,17 +10,15 @@
 <body class="bg-gray-100 text-gray-900 font-sans">
 
   {{-- Navbar --}}
-  <nav class="bg-white shadow-md py-4">
-    <div class="container mx-auto px-4">
-      <ul class="flex space-x-4 justify-center">
-        <li><a href="/" class="hover:text-blue-600">Home</a></li>
-        <li><a href="/rental" class="hover:text-blue-600">Rental</a></li>
-        <li><a href="/pelayanan" class="text-blue-600 font-semibold">Pelayanan</a></li>
-        <li><a href="/about" class="hover:text-blue-600">Tentang Kami</a></li>
-        <li><a href="/contact" class="hover:text-blue-600">Kontak</a></li>
-        <li><a href="/blog" class="hover:text-blue-600">Blog</a></li>
-      </ul>
-    </div>
+  <nav>
+    <ul>
+      <li><a href="{{ url('/') }}">Home</a></li>
+      <li><a href="{{ url('/rental') }}">Rental</a></li>
+      <li><a href="{{ url('/pelayanan') }}">Pelayanan</a></li>
+      <li><a href="{{ url('/about') }}" >Tentang Kami</a></li>
+      <li><a href="{{ url('/contact') }}">Kontak</a></li>
+      <li><a href="{{ url('/blog') }}">Blog</a></li>
+    </ul>
   </nav>
 
  <!-- Layanan -->
@@ -64,7 +62,7 @@
           <li><i class="fab fa-tiktok"></i> <a href="#">Anugerah.x</a></li>
         </ul>
       </div>
-      
+
 <div class="footer-column">
         <h3>Alamat</h3>
         <p>Jl. Kedon Agung dusun Nganti, Sendangadi, Kec. Mlati, Kabupaten Sleman, <br>Daerah Istimewa Yogyakarta 55284</p>
