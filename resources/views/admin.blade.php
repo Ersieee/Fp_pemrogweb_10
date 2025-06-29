@@ -24,7 +24,7 @@
   </nav>
 
   {{-- Form Login --}}
-  <main class="admin-container">
+  <main>
     <div class="admin-header">
       <h2><i class="fas fa-sign-in-alt"></i> Login Pengguna</h2>
     </div>
@@ -48,7 +48,7 @@
     <p>Belum punya akun? <a href="/register" class="text-blue-600 hover:underline">Daftar Sekarang</a></p>
   </div>
 
-  
+
   <!-- Footer -->
   <footer>
     <div class="footer-container">
