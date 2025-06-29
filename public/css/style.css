@@ -919,3 +919,111 @@ footer {
   z-index: 1;
   position: relative;
 }
+
+/* ======================= INVOICE STYLE ======================= */
+
+.invoice-container {
+  max-width: 900px;
+  margin: 30px auto;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.invoice-container h1,
+.invoice-container h2,
+.invoice-container h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #003366;
+}
+
+.invoice-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.invoice-container td,
+.invoice-container th {
+  padding: 12px;
+  vertical-align: top;
+  border-bottom: 1px solid #ddd;
+}
+
+.invoice-container .qr-section {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.invoice-container .qr-section img {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.status-pending {
+  color: orange;
+  font-weight: bold;
+}
+
+.status-unpaid {
+  color: red;
+  font-weight: bold;
+}
+
+.total-bayar {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-top: 10px;
+}
+
+.btn-kembali {
+  display: inline-block;
+  margin-top: 20px;
+  background: #6c757d;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #fff;
+  transition: background 0.3s;
+}
+
+.btn-kembali:hover {
+  background: #5a6268;
+}
+
+.detail-rincian {
+  border-top: 1px solid #ddd;
+  padding-top: 15px;
+  margin-top: 15px;
+}
+
+/* Tombol Upload */
+.upload-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.upload-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Batas waktu pembayaran */
+.batas-waktu {
+  color: #555;
+  font-style: italic;
+  margin-top: 5px;
+}
+
+/* ===================== END INVOICE STYLE ===================== */
+
