@@ -151,27 +151,33 @@ nav ul li a.active {
 
 
 
-/* Modal */
 .modal {
   display: none;
   position: fixed;
-  z-index: 9999; /* Naikkan supaya modal muncul di atas */
-  left: 0; top: 0;
-  width: 100%; height: 100%;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
   overflow: auto;
   background-color: rgba(0,0,0,0.5);
 }
 
 .modal-content {
   background-color: #fff;
-  margin: 10% auto;
+  margin: 5% auto;
   padding: 2rem;
   border: 1px solid #888;
   width: 90%;
   max-width: 400px;
   border-radius: 10px;
   animation: fadeIn 0.5s;
+
+  max-height: 80vh;
+  overflow-y: auto;
 }
+
+
 .modal-content input {
   width: 100%;
   padding: 0.5rem;
