@@ -1,60 +1,42 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RentalController;
+use App\Http\Controllers\InvoiceController;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\UserController;
 
 // Home
 Route::get('/', function () {
     return view('home');
 });
 
-use App\Http\Controllers\RentalController;
-
+// Public pages
 Route::get('/rental', [RentalController::class, 'index'])->name('rental.index');
+Route::view('/pelayanan', 'pelayanan');
+Route::view('/about', 'about');
+Route::view('/contact', 'contact');
+Route::view('/blog', 'blog');
 
-
-// Pelayanan
-Route::get('/pelayanan', function () {
-    return view('pelayanan');
-});
-
-// Tentang Kami
-Route::get('/about', function () {
-    return view('about');
-});
-
-// Kontak
-Route::get('/contact', function () {
-    return view('contact');
-});
-
-// Blog
-Route::get('/blog', function () {
-    return view('blog');
-});
-
-use App\Http\Controllers\InvoiceController;
-
+// Invoice
 Route::get('/invoice', [InvoiceController::class, 'showInvoice'])->name('invoice.show');
 
-
-
-// routes/web.php
- use App\Http\Controllers\Auth\RegisterController;
+// Auth - Register
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [RegisterController::class, 'register']);
 
-// Login
-use App\Http\Controllers\Auth\LoginController;
-
-Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+// Auth - Login
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'login']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-// Reset password (manual)
-Route::get('/forgot-password', [LoginController::class, 'showForgotPasswordForm'])->middleware('guest');
-Route::post('/forgot-password', [LoginController::class, 'handleForgotPassword'])->middleware('guest');
+// Dashboard (setelah login)
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', [UserController::class, 'showUser'])->name('user.dashboard');
+});
 
-
-use App\Http\Controllers\UserController;
-
-Route::get('/user', [UserController::class, 'showUser'])->middleware('auth');
+// TIDAK PERLU BANYAK-BANYAK
+Route::get('/debug-auth', function () {
+    return Auth::user() ?? 'Belum login';
+});
