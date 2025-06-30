@@ -17,32 +17,58 @@
 <li><a href="{{ url('/about') }}" class="{{ Request::is('about') ? 'active' : '' }}"><i class="fas fa-users"></i> Tentang Kami</a></li>
 <li><a href="{{ url('/contact') }}" class="{{ Request::is('contact') ? 'active' : '' }}"><i class="fas fa-envelope"></i> Kontak</a></li>
 <li><a href="{{ url('/blog') }}" class="{{ Request::is('blog') ? 'active' : '' }}"><i class="fas fa-blog"></i> Blog</a></li>
-  <li><a href="/login" title="login"><i class="fas fa-user-circle navbar-login-icon"></i></a></li>
+   <li><a href="{{ route('user.dashboard') }}" class="{{ Request::is('user') ? 'active' : '' }}"><i class="fas fa-user"></i> Dashboard</a></li>
     </ul>
   </nav>
-   <main class="blog-container">
-
- <!-- Layanan -->
-<section class="py-12 bg-gray-50">
-  <div class="container mx-auto px-4 grid md:grid-cols-3 gap-6">
-    <div class="bg-white p-6 rounded-lg shadow-md">
-      <h3 class="text-xl font-bold mb-2">City Car</h3>
-      <p class="text-gray-700 mb-4">Penyediaan kendaraan hemat bahan bakar dan lincah.</p>
-      <a href="/rental" class="text-blue-600 hover:underline">Selengkapnya</a>
-    </div>
-    <div class="bg-white p-6 rounded-lg shadow-md">
-      <h3 class="text-xl font-bold mb-2">Luxury Car</h3>
-      <p class="text-gray-700 mb-4">Mobil mewah dengan fitur canggih.</p>
-      <a href="/rental" class="text-blue-600 hover:underline">Selengkapnya</a>
-    </div>
-    <div class="bg-white p-6 rounded-lg shadow-md">
-      <h3 class="text-xl font-bold mb-2">Family Car</h3>
-      <p class="text-gray-700 mb-4">Mobil keluarga yang luas dan nyaman.</p>
-      <a href="/rental" class="text-blue-600 hover:underline">Selengkapnya</a>
-    </div>
+  <main class="container">
+   <section class="layanan-lanjutan container">
+  <div class="layanan-item">
+    <h3>City Car</h3>
+    <p>
+      Penyediaan yang layak untuk kendaraan di tengah kota. Hemat bahan bakar dan lincah untuk berkendara di tengah kota. cocok untuk bersama Keluarga.
+    </p>
+    <a href="#" class="btn-layanan">Selengkapnya</a>
+  </div>
+  <div class="layanan-item">
+    <h3>Luxury Car</h3>
+    <p>
+      Penyewaan mobil mewah yang menawarkan kenyamanan dan kemewahan dengan fitur-fitur canggih. Cocok untuk acara spesial, pernikahan, atau perjalanan bisnis.
+    </p>
+    <a href="#" class="btn-layanan">Selengkapnya</a>
+  </div>
+  <div class="layanan-item">
+    <h3>Family Car</h3>
+    <p>
+      Penyewaan mobil keluarga yang luas dan nyaman. Nikmati perjalanan nyaman bersama keluarga dengan mobil berkapasitas luas dan fitur keselamatan lengkap. Cocok untuk liburan, mudik, atau acara keluarga.
+    </p>
+    <a href="#" class="btn-layanan">Selengkapnya</a>
   </div>
 </section>
- </main>
+
+<section class="additional-services">
+  <div class="service">
+    <div class="icon-circle">
+      🚗
+    </div>
+    <h3>VEHICLES</h3>
+    <p>Semua kendaraan Pace Rental secara rutin dipelihara untuk memastikan kenyamanan dan keamanan Anda selama setiap perjalanan.</p>
+  </div>
+  <div class="service">
+    <div class="icon-circle">
+      🗺️
+    </div>
+    <h3>NETWORK AREA</h3>
+    <p>Pace Rental memiliki jaringan yang luas di berbagai kota untuk memenuhi kebutuhan pelanggan dengan efektif.</p>
+  </div>
+  <div class="service">
+    <div class="icon-circle">
+      📦
+    </div>
+    <h3>TRANSPORTATION SERVICES</h3>
+    <p>Pace Rental menawarkan berbagai layanan, termasuk Penyewaan Mobil, seperti kendaraan di kota, kendraan untuk kluarga dan juga Kendaraan untuk berbisnis.</p>
+  </div>
+</section>
+</main>
 
   <!-- Footer -->
   <footer>

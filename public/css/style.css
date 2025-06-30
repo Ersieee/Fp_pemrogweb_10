@@ -1210,3 +1210,36 @@ nav ul li a.active {
 .logout-btn:hover {
     background-color: #0056b3;
 }
+
+
+/* Form login */
+.container {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+}
+
+.contact-form-section input[type="email"],
+.contact-form-section input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.upload-btn {
+  width: 100%;
+  padding: 10px;
+  background: #2196F3;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.upload-btn:hover {
+  background: #1976D2;
+}
