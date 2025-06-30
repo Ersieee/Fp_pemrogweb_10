@@ -8,6 +8,12 @@ use App\Models\Rental;
 
 class RentalController extends Controller
 {
+    public function index()
+    {
+        // Tampilkan halaman rental
+        return view('rental');
+    }
+
     public function cekRental(Request $request)
     {
         $user = User::where('email', $request->email)->first();
