@@ -1130,3 +1130,83 @@ footer {
 .nav-right a:hover {
   color: #00bfff;
 }
+
+nav ul li a.active {
+    color: #ffeb3b;
+    border-bottom: 2px solid #fff;
+}
+
+
+
+
+
+.dashboard-wrapper {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.profile-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    padding: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.profile-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.profile-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ccc;
+}
+
+.profile-info {
+    text-align: left;
+}
+
+
+.history-table {
+    margin-top: 40px;
+}
+
+.rental-history {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.rental-history th, .rental-history td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.rental-history th {
+    background-color: #f4f4f4;
+}
+
+.logout-btn {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background-color: #0056b3;
+}

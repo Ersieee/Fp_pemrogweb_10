@@ -12,12 +12,12 @@
   <!-- Navbar -->
   <nav>
     <ul>
-      <li><a href="{{ url('/') }}">Home</a></li>
-      <li><a href="{{ url('/rental') }}">Rental</a></li>
-      <li><a href="{{ url('/pelayanan') }}">Pelayanan</a></li>
-      <li><a href="{{ url('/about') }}">Tentang Kami</a></li>
-      <li><a href="{{ url('/contact') }}">Kontak</a></li>
-      <li><a href="{{ url('/blog') }}">Blog</a></li>
+        <li><a href="{{ url('/') }}" class="{{ Request::is('/') ? 'active' : '' }}"><i class="fas fa-home"></i> Home</a></li>
+<li><a href="{{ url('/rental') }}" class="{{ Request::is('rental') ? 'active' : '' }}"><i class="fas fa-car"></i> Rental</a></li>
+<li><a href="{{ url('/pelayanan') }}" class="{{ Request::is('pelayanan') ? 'active' : '' }}"><i class="fas fa-concierge-bell"></i> Pelayanan</a></li>
+<li><a href="{{ url('/about') }}" class="{{ Request::is('about') ? 'active' : '' }}"><i class="fas fa-users"></i> Tentang Kami</a></li>
+<li><a href="{{ url('/contact') }}" class="{{ Request::is('contact') ? 'active' : '' }}"><i class="fas fa-envelope"></i> Kontak</a></li>
+<li><a href="{{ url('/blog') }}" class="{{ Request::is('blog') ? 'active' : '' }}"><i class="fas fa-blog"></i> Blog</a></li>
       <li><a href="/login" title="login"><i class="fas fa-user-circle navbar-login-icon"></i></a></li>
     </ul>
   </nav>
@@ -25,6 +25,17 @@
   <!-- Login Form -->
   <main class="container">
     <h2><i class="fas fa-sign-in-alt"></i> Login Pengguna</h2>
+@if (session('error'))
+  <div class="alert alert-danger">
+    {{ session('error') }}
+  </div>
+@endif
+
+@if (session('status'))
+  <div class="alert alert-success">
+    {{ session('status') }}
+  </div>
+@endif
 
     <form method="POST" action="{{ route('login') }}" class="contact-form-section">
       @csrf

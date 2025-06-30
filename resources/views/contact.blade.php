@@ -11,13 +11,13 @@
 <body>
  <nav class="bg-blue-900 p-4 text-white">
     <ul class="flex justify-center gap-6">
-      <li><a href="{{ url('/') }}" class="hover:text-blue-300">Home</a></li>
-      <li><a href="{{ url('/rental') }}" class="text-blue-300 font-bold">Rental</a></li>
-      <li><a href="{{ url('/pelayanan') }}" class="hover:text-blue-300">Pelayanan</a></li>
-      <li><a href="{{ url('/about') }}" class="hover:text-blue-300">Tentang Kami</a></li>
-      <li><a href="{{ url('/contact') }}" class="hover:text-blue-300">Kontak</a></li>
-      <li><a href="{{ url('/blog') }}" class="hover:text-blue-300">Blog</a></li>
-    <li><a href="/admin" title="Admin"><i class="fas fa-user-circle navbar-admin-icon"></i></a></li>
+    <li><a href="{{ url('/') }}" class="{{ Request::is('/') ? 'active' : '' }}"><i class="fas fa-home"></i> Home</a></li>
+<li><a href="{{ url('/rental') }}" class="{{ Request::is('rental') ? 'active' : '' }}"><i class="fas fa-car"></i> Rental</a></li>
+<li><a href="{{ url('/pelayanan') }}" class="{{ Request::is('pelayanan') ? 'active' : '' }}"><i class="fas fa-concierge-bell"></i> Pelayanan</a></li>
+<li><a href="{{ url('/about') }}" class="{{ Request::is('about') ? 'active' : '' }}"><i class="fas fa-users"></i> Tentang Kami</a></li>
+<li><a href="{{ url('/contact') }}" class="{{ Request::is('contact') ? 'active' : '' }}"><i class="fas fa-envelope"></i> Kontak</a></li>
+<li><a href="{{ url('/blog') }}" class="{{ Request::is('blog') ? 'active' : '' }}"><i class="fas fa-blog"></i> Blog</a></li>
+  <li><a href="/login" title="login"><i class="fas fa-user-circle navbar-login-icon"></i></a></li>
      </ul>
   </nav>
    <main>
