@@ -62,3 +62,11 @@ Route::post('/forgot-password', [LoginController::class, 'handleForgotPassword']
 Route::get('/home', function () {
     return view('/home');
 })->middleware('auth');
+
+use App\Http\Controllers\ProfileController;
+
+Route::get('/profile', [ProfileController::class, 'index'])->middleware('auth');
+
+
+
+
