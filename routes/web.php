@@ -5,8 +5,9 @@ use App\Http\Controllers\RentalController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
- use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProfileController;
 
 
 // Home
@@ -40,9 +41,6 @@ Route::post('/forgot-password', [LoginController::class, 'handleForgotPassword']
 Route::middleware(['auth'])->group(function () {
     // Dashboard
     Route::get('/user', [UserController::class, 'showUser'])->name('user.dashboard');
-
-    // Profile page
-    Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 
     // Simpan rental
     Route::post('/rental', [RentalController::class, 'store'])->name('rental.store');

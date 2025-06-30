@@ -22,68 +22,18 @@
     </ul>
   </nav>
 
-  <!-- Form Registrasi -->
-  <main class="container">
-    <h2><i class="fas fa-user-plus"></i> Form Registrasi Pengguna</h2>
+  <form method="POST" action="{{ route('register') }}" class="bg-white p-6 rounded shadow-md w-96">
+    @csrf
+    <h2 class="text-xl font-semibold mb-4">Daftar Akun</h2>
 
-    <form method="POST" action="{{ route('register') }}" class="contact-form-section">
-      @csrf
+    <input name="name" type="text" placeholder="Nama Lengkap" class="w-full p-2 mb-3 border rounded" required>
+    <input name="email" type="email" placeholder="Email" class="w-full p-2 mb-3 border rounded" required>
+    <input name="phone" type="text" placeholder="Nomor Telepon" class="w-full p-2 mb-3 border rounded" required>
+    <input name="password" type="password" placeholder="Password" class="w-full p-2 mb-3 border rounded" required>
+    <input name="password_confirmation" type="password" placeholder="Konfirmasi Password" class="w-full p-2 mb-4 border rounded" required>
 
-      <label for="name">Nama Lengkap</label>
-      <input type="text" name="name" id="name" required placeholder="Nama lengkap">
-
-      <label for="email">Email</label>
-      <input type="email" name="email" id="email" required placeholder="Email aktif">
-
-      <label for="password">Password</label>
-      <input type="password" name="password" id="password" required placeholder="Password">
-
-      <label for="password_confirmation">Konfirmasi Password</label>
-      <input type="password" name="password_confirmation" id="password_confirmation" required placeholder="Ulangi password">
-
-      <button type="submit" class="upload-btn">Daftar</button>
-    </form>
-    <div class="text-center-box" style="margin-top: 2rem;">
-      <p>Sudah punya akun? <a href="{{ route('login') }}" class="btn-layanan">Login Sekarang</a></p>
-    </div>
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-container">
-      <div class="footer-column">
-        <h3>Jam Layanan</h3>
-        <ul>
-          <li><strong>Telephone Sales</strong><br>Senin–Jumat, 08:00–17:00</li>
-          <li><strong>Customer Service</strong><br>Senin–Sabtu, 09:00–20:00</li>
-        </ul>
-      </div>
-
-      <div class="footer-column">
-        <h3>Media Sosial</h3>
-        <ul>
-          <li><i class="fab fa-instagram"></i> <a href="#">@anugerah.x</a></li>
-          <li><i class="fab fa-whatsapp"></i> <a href="#">+62 853-9911-1636</a></li>
-          <li><i class="fab fa-facebook"></i> <a href="#">Pace_Rental</a></li>
-          <li><i class="fab fa-tiktok"></i> <a href="#">Anugerah.x</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-column">
-        <h3>Alamat</h3>
-        <p>Jl. Kedon Agung dusun Nganti, Sendangadi, Kec. Mlati, Kabupaten Sleman, <br>Daerah Istimewa Yogyakarta 55284</p>
-      </div>
-
-      <div class="footer-column">
-        <h3>Payment Partner</h3>
-        <div class="payment-grid">
-          <img src="{{ asset('images/bri.png') }}" alt="BRI">
-          <img src="{{ asset('images/shopeepay.png') }}" alt="ShopeePay">
-          <img src="{{ asset('images/mandiri.png') }}" alt="Mandiri">
-          <img src="{{ asset('images/visa.png') }}" alt="Visa">
-        </div>
-      </div>
-    </div>
-  </footer>
+    <button type="submit" class="w-full bg-green-500 text-white p-2 rounded hover:bg-green-600">Daftar</button>
+    <p class="mt-4 text-sm">Sudah punya akun? <a href="{{ route('login') }}" class="text-blue-600">Login</a></p>
+  </form>
 </body>
 </html>
