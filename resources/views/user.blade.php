@@ -30,7 +30,7 @@
         <div class="profile-card">
             <h1>Profil Anda</h1>
             <div class="profile-content">
-                <img src="{{ Auth::user()->profile_photo_url ?? asset('images/default-profile.png') }}" 
+                <img src="{{ Auth::user()->profile_photo_url ?? asset('images/default-profile.png') }}"
                      alt="Foto Profil" class="profile-photo">
                 <div class="profile-info">
                     <p><strong>Nama:</strong> {{ Auth::user()->name }}</p>
@@ -55,21 +55,26 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @forelse ($riwayatPenyewaan as $rental)
-                        <tr>
-                            <td>{{ \Carbon\Carbon::parse($rental->tanggal_sewa)->format('d-m-Y') }} {{ \Carbon\Carbon::parse($rental->jam_mulai)->format('H:i') }}</td>
-                            <td>{{ $rental->durasi }} jam</td>
-                            <td>{{ \Carbon\Carbon::parse($rental->tanggal_sewa)->format('d-m-Y') }}</td>
-                            <td>{{ \Carbon\Carbon::parse($rental->jam_mulai)->format('H:i') }}</td>
-                            <td>{{ \Carbon\Carbon::parse($rental->jam_mulai)->addHours($rental->durasi)->format('H:i') }}</td>
-                            <td>Rp{{ number_format($rental->total_harga, 0, ',', '.') }}</td>
-                        </tr>
-                    @empty
-                        <tr>
-                            <td colspan="6">Belum melakukan pesanan. Harap pesan terlebih dahulu.</td>
-                        </tr>
-                    @endforelse
-                </tbody>
+    @forelse ($riwayatPenyewaan as $rental)
+        <tr>
+            <td>{{ \Carbon\Carbon::parse($rental->tanggal_sewa)->format('d-m-Y') }} 09:00</td>
+            <td>{{ $rental->jumlah_hari }} hari</td>
+            <td>{{ \Carbon\Carbon::parse($rental->tanggal_sewa)->format('d-m-Y') }}</td>
+            <td>09:00</td>
+            <td>
+                {{ \Carbon\Carbon::parse($rental->tanggal_sewa)
+                    ->addDays($rental->jumlah_hari)
+                    ->format('d-m-Y') }} 09:00
+            </td>
+            <td>Rp{{ number_format($rental->total, 0, ',', '.') }}</td>
+        </tr>
+    @empty
+        <tr>
+            <td colspan="6">Belum melakukan pesanan. Harap pesan terlebih dahulu.</td>
+        </tr>
+    @endforelse
+</tbody>
+
             </table>
         </div>
     </div>

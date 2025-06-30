@@ -1,3 +1,4 @@
+@php use Illuminate\Support\Facades\Auth;@endphp
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -18,7 +19,12 @@
 <li><a href="{{ url('/about') }}" class="{{ Request::is('about') ? 'active' : '' }}"><i class="fas fa-users"></i> Tentang Kami</a></li>
 <li><a href="{{ url('/contact') }}" class="{{ Request::is('contact') ? 'active' : '' }}"><i class="fas fa-envelope"></i> Kontak</a></li>
 <li><a href="{{ url('/blog') }}" class="{{ Request::is('blog') ? 'active' : '' }}"><i class="fas fa-blog"></i> Blog</a></li>
-      <li><a href="/login" title="login"><i class="fas fa-user-circle navbar-login-icon"></i></a></li>
+      @auth
+  <li><a href="{{ url('/user') }}" title="Profile"><i class="fas fa-user-circle navbar-login-icon"></i></a></li>
+@else
+  <li><a href="{{ url('/login') }}" title="Login"><i class="fas fa-user-circle navbar-login-icon"></i></a></li>
+@endauth
+
     </ul>
   </nav>
 

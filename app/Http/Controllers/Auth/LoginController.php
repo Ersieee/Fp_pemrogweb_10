@@ -25,9 +25,10 @@ class LoginController extends Controller
 
         // Coba login
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-            // Login berhasil, arahkan ke halaman user
-            return redirect()->intended('/user');
-        }
+        $request->session()->regenerate();
+        return redirect()->intended('/user');
+    }
+
 
         // Gagal login
         return back()->with('error', 'Email atau password salah.');
