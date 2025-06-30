@@ -20,7 +20,7 @@
    <li><a href="{{ route('user.dashboard') }}" class="{{ Request::is('user') ? 'active' : '' }}"><i class="fas fa-user"></i> Dashboard</a></li>
     </ul>
   </nav>
-   <div class="container fade-in">
+   <div class="" style="text-align: center; margin-bottom: 40px;">
     <div class="profile">
       <img src="{{ asset('images/logo1.png') }}" alt="Logo PACE RENTAL" class="logo">
       <div class="text-center-box">
@@ -75,11 +75,12 @@
 
    <script>
     document.addEventListener("DOMContentLoaded", function () {
-      const container = document.querySelector(".container");
-      container.style.opacity = "1";
-      container.style.transform = "translateY(0)";
-      container.style.transition = "opacity 1s ease, transform 1s ease";
-    });
+    const container = document.querySelector(".container-small");
+if(container){
+  container.style.opacity = "1";
+  container.style.transform = "translateY(0)";
+  container.style.transition = "opacity 1s ease, transform 1s ease";
+}
 
   </script>
 </body>

@@ -35,7 +35,7 @@
     <button type="submit" class="upload-btn">Login</button>
   </form>
 
-  <div class="text-center-box" style="margin-top: 2rem;">
+ <div class= ""style="margin-bottom: 10px;">
     <p>Belum punya akun? <a href="{{ route('register') }}" class="btn-layanan">Daftar Sekarang</a></p>
   </div>
 </main>

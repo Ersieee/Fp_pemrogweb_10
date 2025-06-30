@@ -5,92 +5,46 @@ use App\Http\Controllers\RentalController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
-
-use App\Http\Controllers\ProfileController;
-
+ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 
+
 // Home
-Route::get('/', function () {
-    return view('home');
-});
+Route::view('/', 'home');
 
-
-// Rental
-
-// Public pages
-
-Route::get('/rental', [RentalController::class, 'index'])->name('rental.index');
+ // Public pages
 Route::view('/pelayanan', 'pelayanan');
 Route::view('/about', 'about');
 Route::view('/contact', 'contact');
 Route::view('/blog', 'blog');
 
-
-// Pelayanan
-Route::get('/pelayanan', function () {
-    return view('pelayanan');
-});
-
-// Tentang Kami
-Route::get('/about', function () {
-    return view('about');
-});
-
-// Kontak
-Route::get('/contact', function () {
-    return view('contact');
-});
-
-// Blog
-Route::get('/blog', function () {
-    return view('blog');
-});
+// Rental
+Route::get('/rental', [RentalController::class, 'index'])->name('rental.index');
 
 // Invoice
 Route::get('/invoice', [InvoiceController::class, 'showInvoice'])->name('invoice.show');
 
-// Register
-Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+// Auth: Register & Login
+Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register')->middleware('guest');
 Route::post('/register', [RegisterController::class, 'register']);
 
- // Login
-Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [LoginController::class, 'login']);
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
-
-// Forgot Password
-Route::get('/forgot-password', [LoginController::class, 'showForgotPasswordForm'])->middleware('guest');
-Route::post('/forgot-password', [LoginController::class, 'handleForgotPassword'])->middleware('guest');
-
-// User Profile / Dashboard
-Route::get('/user', [UserController::class, 'showUser'])->middleware('auth');
-
-// Profile halaman
-Route::get('/profile', [ProfileController::class, 'index'])->middleware('auth');
-
-//Rental
-Route::post('/rental', [RentalController::class, 'store'])->middleware('auth');
-
-// Invoice
-Route::get('/invoice', [InvoiceController::class, 'showInvoice'])->name('invoice.show');
-
-// Auth - Register
-Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
-Route::post('/register', [RegisterController::class, 'register']);
-
-// Auth - Login
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'login']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-// Dashboard (setelah login)
-Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', [UserController::class, 'showUser'])->name('user.dashboard');
-});
+// Forgot Password (kalau ada fiturnya)
+Route::get('/forgot-password', [LoginController::class, 'showForgotPasswordForm'])->middleware('guest');
+Route::post('/forgot-password', [LoginController::class, 'handleForgotPassword'])->middleware('guest');
 
-// TIDAK PERLU BANYAK-BANYAK
-Route::get('/debug-auth', function () {
-    return auth::user() ?? 'Belum login';
+// Routes yang hanya bisa diakses setelah login
+Route::middleware(['auth'])->group(function () {
+    // Dashboard
+    Route::get('/user', [UserController::class, 'showUser'])->name('user.dashboard');
+
+    // Profile page
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+
+    // Simpan rental
+    Route::post('/rental', [RentalController::class, 'store'])->name('rental.store');
 });
 

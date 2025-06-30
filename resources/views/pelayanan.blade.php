@@ -21,54 +21,53 @@
     </ul>
   </nav>
   <main class="container">
-   <section class="layanan-lanjutan container">
-  <div class="layanan-item">
-    <h3>City Car</h3>
-    <p>
-      Penyediaan yang layak untuk kendaraan di tengah kota. Hemat bahan bakar dan lincah untuk berkendara di tengah kota. cocok untuk bersama Keluarga.
-    </p>
-    <a href="#" class="btn-layanan">Selengkapnya</a>
-  </div>
-  <div class="layanan-item">
-    <h3>Luxury Car</h3>
-    <p>
-      Penyewaan mobil mewah yang menawarkan kenyamanan dan kemewahan dengan fitur-fitur canggih. Cocok untuk acara spesial, pernikahan, atau perjalanan bisnis.
-    </p>
-    <a href="#" class="btn-layanan">Selengkapnya</a>
-  </div>
-  <div class="layanan-item">
-    <h3>Family Car</h3>
-    <p>
-      Penyewaan mobil keluarga yang luas dan nyaman. Nikmati perjalanan nyaman bersama keluarga dengan mobil berkapasitas luas dan fitur keselamatan lengkap. Cocok untuk liburan, mudik, atau acara keluarga.
-    </p>
-    <a href="#" class="btn-layanan">Selengkapnya</a>
-  </div>
-</section>
 
-<section class="additional-services">
-  <div class="service">
-    <div class="icon-circle">
-      🚗
+  <!-- Section Layanan -->
+   <section class="layanan-lanjutan">
+  <div class="layanan-item">
+      <h3>City Car</h3>
+      <p>
+        Penyediaan yang layak untuk kendaraan di tengah kota. Hemat bahan bakar dan lincah untuk berkendara di tengah kota. Cocok untuk bersama keluarga.
+      </p>
+      <a href="#" class="btn-layanan">Selengkapnya</a>
     </div>
-    <h3>VEHICLES</h3>
-    <p>Semua kendaraan Pace Rental secara rutin dipelihara untuk memastikan kenyamanan dan keamanan Anda selama setiap perjalanan.</p>
-  </div>
-  <div class="service">
-    <div class="icon-circle">
-      🗺️
+  <div class="layanan-item">
+      <h3>Luxury Car</h3>
+      <p>
+        Penyewaan mobil mewah yang menawarkan kenyamanan dan kemewahan dengan fitur-fitur canggih. Cocok untuk acara spesial, pernikahan, atau perjalanan bisnis.
+      </p>
+      <a href="#" class="btn-layanan">Selengkapnya</a>
+   </div>
+  <div class="layanan-item">
+      <h3>Family Car</h3>
+      <p>
+        Penyewaan mobil keluarga yang luas dan nyaman. Nikmati perjalanan nyaman bersama keluarga dengan mobil berkapasitas luas dan fitur keselamatan lengkap. Cocok untuk liburan, mudik, atau acara keluarga.
+      </p>
+      <a href="#" class="btn-layanan">Selengkapnya</a>
     </div>
-    <h3>NETWORK AREA</h3>
-    <p>Pace Rental memiliki jaringan yang luas di berbagai kota untuk memenuhi kebutuhan pelanggan dengan efektif.</p>
-  </div>
-  <div class="service">
-    <div class="icon-circle">
-      📦
+  </section>
+
+  <!-- Section Additional Services -->
+  <section class="additional-services">
+    <div class="service">
+      <div class="icon-circle">🚗</div>
+      <h3>VEHICLES</h3>
+      <p>Semua kendaraan Pace Rental secara rutin dipelihara untuk memastikan kenyamanan dan keamanan Anda selama setiap perjalanan.</p>
     </div>
-    <h3>TRANSPORTATION SERVICES</h3>
-    <p>Pace Rental menawarkan berbagai layanan, termasuk Penyewaan Mobil, seperti kendaraan di kota, kendraan untuk kluarga dan juga Kendaraan untuk berbisnis.</p>
-  </div>
-</section>
+    <div class="service">
+      <div class="icon-circle">🗺️</div>
+      <h3>NETWORK AREA</h3>
+      <p>Pace Rental memiliki jaringan yang luas di berbagai kota untuk memenuhi kebutuhan pelanggan dengan efektif.</p>
+    </div>
+    <div class="service">
+      <div class="icon-circle">📦</div>
+      <h3>TRANSPORTATION SERVICES</h3>
+      <p>Pace Rental menawarkan berbagai layanan, termasuk Penyewaan Mobil, seperti kendaraan di kota, kendaraan untuk keluarga dan juga kendaraan untuk berbisnis.</p>
+    </div>
+  </section>
+
 </main>
+
 
   <!-- Footer -->
   <footer>

@@ -8,7 +8,7 @@
 
     <!-- Link ke file CSS -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-   
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
@@ -25,7 +25,7 @@
 <li><a href="{{ route('user.dashboard') }}" class="{{ Request::is('user') ? 'active' : '' }}"><i class="fas fa-user"></i> </a></li>
 
 
-            
+
         </ul>
     </nav>
 
@@ -35,7 +35,7 @@
         <div class="profile-card">
             <h1>Profil Anda</h1>
             <div class="profile-content">
-                <img src="{{ Auth::user()->profile_photo_url ?? asset('images/default-profile.png') }}" 
+                <img src="{{ Auth::user()->profile_photo_url ?? asset('images/default-profile.png') }}"
                      alt="Foto Profil" class="profile-photo">
                 <div class="profile-info">
                    @if (Auth::check())
