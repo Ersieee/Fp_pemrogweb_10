@@ -1,4 +1,4 @@
-<!--<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
@@ -7,9 +7,9 @@
   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body class="about-page"> -->
 
-  <!-- Navbar
+<body>
+  <!-- Navbar -->
   <nav>
     <ul>
       <li><a href="{{ url('/') }}">Home</a></li>
@@ -20,33 +20,24 @@
       <li><a href="{{ url('/blog') }}">Blog</a></li>
       <li><a href="/admin" title="Admin"><i class="fas fa-user-circle navbar-admin-icon"></i></a></li>
     </ul>
-  </nav> -->
+  </nav>
 
-  <!-- Login Form
-  <main class="container">
-    <h2><i class="fas fa-sign-in-alt"></i> Login Pengguna</h2>
+  <!-- Login Form -->
+  <form method="POST" action="{{ route('login') }}" class="bg-white p-6 rounded shadow-md w-80">
+    @csrf
+    <h2 class="text-xl font-semibold mb-4">Login</h2>
 
-    <form method="POST" action="{{ route('login') }}" class="contact-form-section">
-      @csrf
+    <input name="email" type="email" placeholder="Email" class="w-full p-2 mb-3 border rounded" required>
+    <input name="password" type="password" placeholder="Password" class="w-full p-2 mb-4 border rounded" required>
 
-      <label for="email">Email</label>
-      <input type="email" name="email" id="email" required placeholder="Masukkan email">
+    <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Login</button>
+    <p class="mt-4 text-sm">Belum punya akun? <a href="{{ route('register') }}" class="text-blue-600">Daftar</a></p>
+  </form>
 
-      <label for="password">Password</label>
-      <input type="password" name="password" id="password" required placeholder="Masukkan password">
-
-      <button type="submit" class="upload-btn">Login</button>
-    </form>
-
-    <div class="text-center-box" style="margin-top: 1rem;">
-      <p>Belum punya akun? <a href="{{ route('register') }}" class="btn-layanan">Daftar Sekarang</a></p>
-    </div>
-  </main> -->
-
-  <!-- Footer
+  <!-- Footer -->
   <footer>
     <div class="footer-container">
-       <div class="footer-column">
+      <div class="footer-column">
         <h3>Jam Layanan</h3>
         <ul>
           <li><strong>Telephone Sales</strong><br>Senin–Jumat, 08:00–17:00</li>
@@ -55,7 +46,7 @@
       </div>
 
       <div class="footer-column">
-         <h3>Media Sosial</h3>
+        <h3>Media Sosial</h3>
         <ul>
           <li><i class="fab fa-instagram"></i> <a href="#">@anugerah.x</a></li>
           <li><i class="fab fa-whatsapp"></i> <a href="#">+62 853-9911-1636</a></li>
@@ -80,7 +71,5 @@
       </div>
     </div>
   </footer>
-
 </body>
 </html>
--->

@@ -6,6 +6,8 @@ use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProfileController;
 
 // Home
 Route::get('/', function () {
@@ -31,12 +33,13 @@ Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login')->
 Route::post('/login', [LoginController::class, 'login']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-// Dashboard (setelah login)
+// Dashboard setelah login
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [UserController::class, 'showUser'])->name('user.dashboard');
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 });
 
-// TIDAK PERLU BANYAK-BANYAK
+// Debug login status
 Route::get('/debug-auth', function () {
     return Auth::user() ?? 'Belum login';
 });

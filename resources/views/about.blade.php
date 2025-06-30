@@ -25,8 +25,8 @@
       <img src="{{ asset('images/logo1.png') }}" alt="Logo PACE RENTAL" class="logo">
       <div class="text-center-box">
         <h3>Selamat Datang Di PACE RENTAL</h3>
-        <p>PACE RENTAL adalah pilihan tepat untuk Anda yang mencari layanan rental mobil berkualitas dengan harga terjangkau. Berdiri sejak tahun 2010, kami telah melayani ribuan pelanggan dengan dedikasi tinggi, memberikan pengalaman perjalanan yang nyaman dan aman. ...</p>
-        <p>Di PACE RENTAL, kami percaya bahwa mobil bukan hanya alat transportasi, tetapi juga teman perjalanan yang membantu mewujudkan impian Anda. Dari perjalanan bisnis hingga liburan keluarga, kami memiliki berbagai pilihan mobil yang siap menemani Anda ke berbagai tujuan. ...</p>
+        <p>PACE RENTAL adalah pilihan tepat untuk Anda yang mencari layanan rental mobil berkualitas dengan harga terjangkau. Berdiri sejak tahun 2010, kami telah melayani ribuan pelanggan dengan dedikasi tinggi, memberikan pengalaman perjalanan yang nyaman dan aman...</p>
+        <p>Di PACE RENTAL, kami percaya bahwa mobil bukan hanya alat transportasi, tetapi juga teman perjalanan yang membantu mewujudkan impian Anda. Dari perjalanan bisnis hingga liburan keluarga, kami memiliki berbagai pilihan mobil yang siap menemani Anda ke berbagai tujuan...</p>
         <p class="quote">"Mengutamakan kenyamanan dan keselamatan, menjadikan perjalanan Anda lebih berarti."</p>
       </div>
      </div>
