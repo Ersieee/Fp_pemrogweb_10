@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
@@ -7,9 +7,9 @@
   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body class="about-page">
+<body class="about-page"> -->
 
-  <!-- Navbar -->
+  <!-- Navbar
   <nav>
     <ul>
       <li><a href="{{ url('/') }}">Home</a></li>
@@ -20,9 +20,9 @@
       <li><a href="{{ url('/blog') }}">Blog</a></li>
       <li><a href="/admin" title="Admin"><i class="fas fa-user-circle navbar-admin-icon"></i></a></li>
     </ul>
-  </nav>
+  </nav> -->
 
-  <!-- Login Form -->
+  <!-- Login Form
   <main class="container">
     <h2><i class="fas fa-sign-in-alt"></i> Login Pengguna</h2>
 
@@ -41,9 +41,9 @@
     <div class="text-center-box" style="margin-top: 1rem;">
       <p>Belum punya akun? <a href="{{ route('register') }}" class="btn-layanan">Daftar Sekarang</a></p>
     </div>
-  </main>
+  </main> -->
 
-  <!-- Footer -->
+  <!-- Footer
   <footer>
     <div class="footer-container">
        <div class="footer-column">
@@ -83,3 +83,4 @@
 
 </body>
 </html>
+-->

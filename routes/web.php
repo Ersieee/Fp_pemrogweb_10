@@ -37,9 +37,9 @@ use App\Http\Controllers\InvoiceController;
 Route::get('/invoice', [InvoiceController::class, 'showInvoice'])->name('invoice.show');
 
 // Admin
-Route::get('/admin', function () {
-    return view('admin');
-});
+//Route::get('/admin', function () {
+ //   return view('admin');
+//});
 
 // routes/web.php
 
@@ -59,6 +59,6 @@ Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth');
 Route::get('/forgot-password', [LoginController::class, 'showForgotPasswordForm'])->middleware('guest');
 Route::post('/forgot-password', [LoginController::class, 'handleForgotPassword'])->middleware('guest');
 
-Route::get('/', function () {
-    return view('/admin');
+Route::get('/home', function () {
+    return view('/home');
 })->middleware('auth');

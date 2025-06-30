@@ -17,7 +17,7 @@
       <li><a href="{{ url('/about') }}" class="active">Tentang Kami</a></li>
       <li><a href="{{ url('/contact') }}">Kontak</a></li>
       <li><a href="{{ url('/blog') }}">Blog</a></li>
-      <li><a href="/admin" title="Admin"><i class="fas fa-user-circle navbar-admin-icon"></i></a></li>
+      <li><a href="/login" title="login"><i class="fas fa-user-circle navbar-login-icon"></i></a></li>
     </ul>
   </nav>
    <div class="container fade-in">
@@ -80,7 +80,7 @@
       container.style.transform = "translateY(0)";
       container.style.transition = "opacity 1s ease, transform 1s ease";
     });
-    
+
   </script>
 </body>
 </html>

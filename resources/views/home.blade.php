@@ -19,7 +19,7 @@
       <li><a href="{{ url('/about') }}" >Tentang Kami</a></li>
       <li><a href="{{ url('/contact') }}">Kontak</a></li>
       <li><a href="{{ url('/blog') }}" >Blog</a></li>
-   <li><a href="/admin" title="Admin"><i class="fas fa-user-circle navbar-admin-icon"></i></a></li>
+   <li><a href="/login" title="login"><i class="fas fa-user-circle navbar-login-icon"></i></a></li>
     </ul>
   </nav>
    <main>
