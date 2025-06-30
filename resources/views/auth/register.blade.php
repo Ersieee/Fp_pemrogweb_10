@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login Pengguna</title>
+  <title>Daftar Pengguna</title>
   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -22,31 +22,36 @@
     </ul>
   </nav>
 
-  <!-- Login Form -->
+  <!-- Form Registrasi -->
   <main class="container">
-    <h2><i class="fas fa-sign-in-alt"></i> Login Pengguna</h2>
+    <h2><i class="fas fa-user-plus"></i> Form Registrasi Pengguna</h2>
 
-    <form method="POST" action="{{ route('login') }}" class="contact-form-section">
+    <form method="POST" action="{{ route('register') }}" class="contact-form-section">
       @csrf
 
+      <label for="name">Nama Lengkap</label>
+      <input type="text" name="name" id="name" required placeholder="Nama lengkap">
+
       <label for="email">Email</label>
-      <input type="email" name="email" id="email" required placeholder="Masukkan email">
+      <input type="email" name="email" id="email" required placeholder="Email aktif">
 
       <label for="password">Password</label>
-      <input type="password" name="password" id="password" required placeholder="Masukkan password">
+      <input type="password" name="password" id="password" required placeholder="Password">
 
-      <button type="submit" class="upload-btn">Login</button>
+      <label for="password_confirmation">Konfirmasi Password</label>
+      <input type="password" name="password_confirmation" id="password_confirmation" required placeholder="Ulangi password">
+
+      <button type="submit" class="upload-btn">Daftar</button>
     </form>
-
-    <div class="text-center-box" style="margin-top: 1rem;">
-      <p>Belum punya akun? <a href="{{ route('register') }}" class="btn-layanan">Daftar Sekarang</a></p>
+    <div class="text-center-box" style="margin-top: 2rem;">
+      <p>Sudah punya akun? <a href="{{ route('login') }}" class="btn-layanan">Login Sekarang</a></p>
     </div>
   </main>
 
   <!-- Footer -->
   <footer>
     <div class="footer-container">
-       <div class="footer-column">
+      <div class="footer-column">
         <h3>Jam Layanan</h3>
         <ul>
           <li><strong>Telephone Sales</strong><br>Senin–Jumat, 08:00–17:00</li>
@@ -55,7 +60,7 @@
       </div>
 
       <div class="footer-column">
-         <h3>Media Sosial</h3>
+        <h3>Media Sosial</h3>
         <ul>
           <li><i class="fab fa-instagram"></i> <a href="#">@anugerah.x</a></li>
           <li><i class="fab fa-whatsapp"></i> <a href="#">+62 853-9911-1636</a></li>
@@ -66,7 +71,7 @@
 
       <div class="footer-column">
         <h3>Alamat</h3>
-        <p>Jl. Kedon Agung dusun Nganti, Sendangadi, Kec. Mlati, Kabupaten Sleman,<br>DIY 55284</p>
+        <p>Jl. Kedon Agung dusun Nganti, Sendangadi, Kec. Mlati, Kabupaten Sleman, <br>Daerah Istimewa Yogyakarta 55284</p>
       </div>
 
       <div class="footer-column">
@@ -80,6 +85,5 @@
       </div>
     </div>
   </footer>
-
 </body>
 </html>

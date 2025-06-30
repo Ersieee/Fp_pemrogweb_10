@@ -55,6 +55,13 @@
     .animate-fadein {
       animation: fadein 2s ease forwards;
     }
+
+    @if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
    </style>
 </body>
 </html>

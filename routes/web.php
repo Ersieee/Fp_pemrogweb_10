@@ -40,3 +40,25 @@ Route::get('/invoice', [InvoiceController::class, 'showInvoice'])->name('invoice
 Route::get('/admin', function () {
     return view('admin');
 });
+
+// routes/web.php
+
+use App\Http\Controllers\Auth\RegisterController;
+
+Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [RegisterController::class, 'register']);
+
+// Login
+use App\Http\Controllers\Auth\LoginController;
+
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login')->middleware('guest');
+Route::post('/login', [LoginController::class, 'login'])->middleware('guest');
+Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth');
+
+// Reset password (manual)
+Route::get('/forgot-password', [LoginController::class, 'showForgotPasswordForm'])->middleware('guest');
+Route::post('/forgot-password', [LoginController::class, 'handleForgotPassword'])->middleware('guest');
+
+Route::get('/', function () {
+    return view('/admin');
+})->middleware('auth');
