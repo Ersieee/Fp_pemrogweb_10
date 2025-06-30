@@ -54,21 +54,14 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/forgot-password', [LoginController::class, 'showForgotPasswordForm'])->middleware('guest');
 Route::post('/forgot-password', [LoginController::class, 'handleForgotPassword'])->middleware('guest');
 
-<<<<<<< HEAD
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
+
 Route::get('/home', function () {
     return view('/home');
 })->middleware('auth');
 
-use App\Http\Controllers\ProfileController;
-
 Route::get('/profile', [ProfileController::class, 'index'])->middleware('auth');
 
-
-
-
-=======
-
-use App\Http\Controllers\UserController;
-
 Route::get('/user', [UserController::class, 'showUser'])->middleware('auth');
->>>>>>> 31c4b2df108a2a49084cec3f10752ee23662ea1e
+
