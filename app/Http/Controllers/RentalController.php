@@ -31,7 +31,7 @@ class RentalController extends Controller
              'tanggal_sewa' => $request->tanggal_sewa,
             'durasi' => $request->durasi,
             'total_harga' => $request->total_harga,
-             'tipe_mobil' => $request->tipe_mobil,
+            'tipe_mobil' => $request->tipe_mobil,
             'batas_pemakaian' => $request->batas_pemakaian
         ]);
 

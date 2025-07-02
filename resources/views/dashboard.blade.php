@@ -37,7 +37,7 @@
                    @if (Auth::check())
                     <p>Selamat datang, {{ Auth::user()->name }}</p>
                     <p><strong>Email:</strong> {{ Auth::user()->email }}</p>
-                    <p><strong>No. Telepon:</strong> {{ Auth::user()->phone ?? 'Belum diisi' }}</p>
+                    <p><strong>No. Telepon:</strong> {{ Auth::user()->phone ?? '08123456789' }}</p>
                         @else
                     <p>Silakan login terlebih dahulu.</p>
                         @endif
@@ -49,32 +49,43 @@
         <div class="history-table">
             <h2>Riwayat Penyewaan Anda</h2>
             <table class="rental-history">
-                <thead>
-                    <tr>
-                        <th>Waktu Sewa</th>
-                        <th>Durasi</th>
-                        <th>Tanggal</th>
-                        <th>Jam Mulai</th>
-                        <th>Waktu Selesai</th>
-                        <th>Total Harga</th>
-                    </tr>
-                </thead>
-                <tbody>
-                     @forelse ($riwayatPenyewaan as $rental)
+               <thead>
+    <tr>
+        <th>Waktu Sewa</th>
+        <th>Durasi</th>
+        <th>Waktu Mulai</th>
+        <th>Waktu Selesai</th> <!-- Gabungan tanggal + jam selesai -->
+        <th>Total Harga</th>
+    </tr>
+</thead>
+<tbody>
+    @forelse ($riwayatPenyewaan as $rental)
         <tr>
+            <!-- Waktu Sewa -->
             <td>{{ \Carbon\Carbon::parse($rental->tanggal_sewa)->format('d-m-Y') }} {{ \Carbon\Carbon::parse($rental->jam_mulai)->format('H:i') }}</td>
-            <td>{{ $rental->durasi }} jam</td>
-            <td>{{ \Carbon\Carbon::parse($rental->tanggal_sewa)->format('d-m-Y') }}</td>
+
+            <!-- Durasi -->
+            <td>{{ $rental->durasi }} hari</td>
+
+            <!-- Jam Mulai -->
             <td>{{ \Carbon\Carbon::parse($rental->jam_mulai)->format('H:i') }}</td>
-            <td>{{ \Carbon\Carbon::parse($rental->jam_mulai)->addHours($rental->durasi)->format('H:i') }}</td>
+
+            <!-- Waktu Selesai (Tanggal + Jam selesai berdasarkan durasi hari) -->
+            <td>
+              {{ \Carbon\Carbon::parse($rental->tanggal_sewa . ' ' . $rental->jam_mulai)->addDays($rental->durasi)->format('d-m-Y H:i') }}
+            </td>
+
+            <!-- Total Harga -->
             <td>Rp{{ number_format($rental->total_harga, 0, ',', '.') }}</td>
         </tr>
     @empty
         <tr>
-            <td colspan="6">Belum melakukan pesanan. Harap pesan terlebih dahulu.</td>
+            <td colspan="5">Belum melakukan pesanan. Harap pesan terlebih dahulu.</td>
         </tr>
     @endforelse
 </tbody>
+
+
 
             </table>
         </div>

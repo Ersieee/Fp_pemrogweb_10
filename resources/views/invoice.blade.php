@@ -54,6 +54,7 @@ $batasWaktu = now()->addDay()->format('d M Y H:i') . ' WIB';
 @endphp
 
 
+<!-- Bagian dalam invoice-container -->
 <div class="invoice-container">
   <h1>Terima Kasih!</h1>
   <h2>Harap Lengkapi Pembayaran</h2>
@@ -66,8 +67,12 @@ $batasWaktu = now()->addDay()->format('d M Y H:i') . ' WIB';
         <p>Status Transaksi: <strong style="color:orange">PENDING</strong></p>
         <p>Status Pembayaran: <strong style="color:red">UNPAID</strong></p>
         <p>Total Pembayaran: <strong>Rp {{ number_format($total, 0, ',', '.') }}</strong></p>
-         <button onclick="openModal()" class="btn-rincian">Rincian Pembayaran</button>
-         <div id="paymentModal" class="modal" style="display:none">
+
+        <!-- Tombol untuk buka modal -->
+        <button onclick="openModal()" class="btn-rincian">Rincian Pembayaran</button>
+
+        <!-- Modal detail pembayaran -->
+        <div id="paymentModal" class="modal" style="display:none">
           <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
             <h2>Rincian Pembayaran</h2>
@@ -82,35 +87,49 @@ $batasWaktu = now()->addDay()->format('d M Y H:i') . ' WIB';
           </div>
         </div>
       </td>
+
+      <!-- Bagian Metode Pembayaran -->
       <td class="qr-section" style="text-align:center;">
-  <h3>QRIS Pembayaran</h3>
-  <img src="{{ asset('images/qris.png') }}" alt="QRIS">
-  <p style="margin-top:10px;">Scan QR untuk bayar</p>
+        <label for="metode">Metode Pembayaran:</label><br>
+        <select id="metode" name="metode" required>
+          <option value=""> TRANSFER BANK </option>
+          <option value="BRI">BRI</option>
+          <option value="mandiri1">MANDIRI</option>
+          <option value="qris">QRIS</option>
+        </select>
 
-  {{-- Tombol Konfirmasi Pembayaran --}}
-  <form action="{{ route('rental.konfirmasi', $rental->id) }}" method="POST" style="margin-top: 10px;">
-    @csrf
-    <button type="submit" class="btn-kembali" style="background-color: #28a745;">✔ Sudah Bayar</button>
-  </form>
-
-  {{-- Tombol Kembali --}}
-  <a href="{{ route('rental.index') }}" class="btn-kembali" style="margin-top: 10px;">← Kembali ke Booking</a>
-
-  {{-- Tombol Cetak Invoice --}}
-  <a href="{{ route('rental.cetakInvoice', $rental->id) }}" class="btn-kembali" style="background-color:#007bff; margin-top: 10px;">🧾 Cetak Invoice</a>
-</td>
-
-
+        <!-- Gambar metode akan muncul di sini -->
+        <div id="gambarMetode" style="text-align:center; margin-top:20px;">
+          <img id="imgMetode" src="" alt="Gambar Metode Pembayaran" style="width: 100%; max-width: 400px; height: auto; display: none; border-radius: 8px;" />
+        </div>
+        
+        <!-- Tombol Navigasi -->
+        <a href="{{ route('rental.index') }}" class="btn-kembali" style="margin-top: 10px;">← Kembali ke Booking</a>
+        <a href="{{ route('rental.cetakInvoice', $rental->id) }}" class="btn-kembali" style="background-color:#007bff; margin-top: 10px;">🧾 Cetak Invoice</a>
+      </td>
     </tr>
   </table>
- </div>
- <script>
+</div>
+
+<!-- Script Modal & Gambar -->
+<script>
 function openModal() {
   document.getElementById("paymentModal").style.display = "block";
 }
 function closeModal() {
   document.getElementById("paymentModal").style.display = "none";
 }
+
+// Ganti gambar berdasarkan metode pembayaran
+document.getElementById('metode').addEventListener('change', function () {
+  var metode = this.value;
+  var img = document.getElementById('imgMetode');
+  if (metode) {
+    img.src = "{{ asset('images') }}/" + metode + ".png";
+    img.style.display = 'block';
+  } else {
+    img.style.display = 'none';
+  }
+});
 </script>
- </body>
-</html>
+ 

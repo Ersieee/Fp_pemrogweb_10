@@ -1,1043 +1,1232 @@
-
-    /* Rental */
+/* Rental */
 .rental-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
 }
 
-.mobil-item {
-  border: 1px solid #ccc;
-  padding: 10px;
-  width: 30%;
-  transition: transform 0.3s;
+/* Catatan: .mobil-item sudah didefinisikan ulang di bawah dengan styling yang lebih lengkap */
+/* .mobil-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 30%;
+    transition: transform 0.3s;
 }
 
 .mobil-item:hover {
-  transform: scale(1.05);
-}
+    transform: scale(1.05);
+} */
 
 /* Form */
 form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
 }
 
-input, textarea {
-  padding: 10px;
-  border: 1px solid #ccc;
+input,
+textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
 }
 
 button {
-  padding: 10px;
-  background-color: #007bff;
-  color: white;
-  border: none;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
 }
 
 /* About & Contact */
-.about, .contact {
-  padding: 20px;
+.about,
+.contact {
+    padding: 20px;
 }
 
 
-/* Halaman Rental */
-body {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f4f4f4;
-}
+/* Halaman Rental (Ini adalah bagian yang sudah ada sebelumnya) */
+/* Saya akan mengambil definisi body dan nav dari bagian yang lebih baru untuk konsistensi */
+/* body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+} */
 
-/* Navigasi */
-nav {
-  background-color: #333;
-  display: flex;
-  justify-content: center;
-  padding: 1rem;
+/* Navigasi (Ini adalah bagian yang sudah ada sebelumnya) */
+/* Saya akan mengambil definisi nav dari bagian yang lebih baru untuk konsistensi */
+/* nav {
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
 }
 nav ul {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-  margin: 0;
-  padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
 }
 nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
 }
 nav ul li a:hover,
 nav ul li a.active {
-  color: #00bfff;
-}
+    color: #00bfff;
+} */
 
-/* Kontainer */
-.container {
-  padding: 2rem;
-  text-align: center;
-}
+/* Kontainer (Ini adalah bagian yang sudah ada sebelumnya, akan disesuaikan dengan yang baru) */
+/* .container {
+    padding: 2rem;
+    text-align: center;
+} */
 
 /* Grid Mobil */
 .mobil-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 24px;
-  justify-items: center;
-}
-
-
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    justify-items: center;
+} 
 
 .mobil-item {
-  width: 100%;
-  max-width: 280px;
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  text-align: center;
-  padding: 16px;
+    width: 100%;
+    max-width: 280px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 16px;
+    /* Properti hover sudah ada di sini */
+    transition: transform 0.3s;
 }
 
 .mobil-item:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
+
 .mobil-item img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 8px;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
 @media (max-width: 1024px) {
-  .mobil-list {
-    grid-template-columns: repeat(2, 1fr); /* Dua kolom di tablet */
-  }
+    .mobil-list {
+        grid-template-columns: repeat(2, 1fr);
+        /* Dua kolom di tablet */
+    }
 }
 
 @media (max-width: 600px) {
-  .mobil-list {
-    grid-template-columns: 1fr; /* Satu kolom di HP */
-  }
-}
-
+    .mobil-list {
+        grid-template-columns: 1fr;
+        /* Satu kolom di HP */
+    }
+} 
 
 
 /* Info Mobil */
 .mobil-info {
-  padding: 1rem;
+    padding: 1rem;
 }
+
 .mobil-info h3 {
-  margin: 0.5rem 0;
+    margin: 0.5rem 0;
 }
+
 .mobil-info p {
-  color: #666;
+    color: #666;
 }
+
 .mobil-info button {
-  background-color: #007bff;
-  color: white;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s ease;
+    background-color: #007bff;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
 }
+
 .mobil-info button:hover {
-  background-color: #0056b3;
-}
-
-
+    background-color: #0056b3;
+} 
 
 .modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.5);
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-content {
-  background-color: #fff;
-  margin: 5% auto;
-  padding: 2rem;
-  border: 1px solid #888;
-  width: 90%;
-  max-width: 400px;
-  border-radius: 10px;
-  animation: fadeIn 0.5s;
-
-  max-height: 80vh;
-  overflow-y: auto;
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 2rem;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 10px;
+    animation: fadeIn 0.5s;
+    max-height: 80vh;
+    overflow-y: auto;
 }
 
 
 .modal-content input {
-  width: 100%;
-  padding: 0.5rem;
-  margin: 0.5rem 0 1rem;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.5rem 0 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
+
 .modal-content button {
-  background-color: #007bff;
-  color: white;
-  padding: 0.7rem 1.5rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
+
 .close {
-  color: #aaa;
-  float: right;
-  font-size: 24px;
-  font-weight: bold;
-  cursor: pointer;
+    color: #aaa;
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 /* Animasi */
 @keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
+
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .close:hover {
-  color: #000;
+    color: #000;
 }
 
 .modal-content input:focus {
-  border-color: #007bff;
-  outline: none;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
-
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+} 
 
 
 /* ===== Halaman tentang kami ===== */
 body.about-page {
-  background-color: #DCDCDC;
+    background-color: #DCDCDC;
 }
 
 /* Container khusus about */
 .about-page .container {
-  max-width: 800px;
-  margin: 50px auto;
-  padding: 2rem;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  animation: fadeIn 1.2s ease forwards;
-  opacity: 0;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1.2s ease forwards;
+    opacity: 0;
 }
 
 .text-center-box {
-  max-width: 700px; /* atau sesuai keinginan, misalnya 600px */
-  margin: 0 auto;
-  text-align: center;
+    max-width: 700px;
+    /* atau sesuai keinginan, misalnya 600px */
+    margin: 0 auto;
+    text-align: center;
 }
 
 
 /* Judul dan paragraf */
 .about-page h2 {
-  text-align: center;
-  color: #007bff;
-  margin-bottom: 1rem;
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 1rem;
 }
 
 .about-page p {
-  line-height: 1.6;
-  text-align: justify;
-  margin-bottom: 1rem;
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 1rem;
 }
 
 .about-page .container p {
-  text-align: center;
+    text-align: center;
 }
 
 /* ===== Profile PACE RENTAL ===== */
 .profile {
-  color: #333;
-  text-align: center;
-  margin-bottom: 2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
 .profile .logo {
-  width: 250px;
-  height: 250px;
-  margin-bottom: 1.5rem;
-  object-fit: contain;
+    width: 250px;
+    height: 250px;
+    margin-bottom: 1.5rem;
+    object-fit: contain;
 }
 
 .profile h3 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
 }
 
 .profile p {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-  line-height: 1.8;
-  text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    line-height: 1.8;
+    text-align: center;
 }
 
 .profile .quote {
-  font-style: italic;
-  font-size: 1.2rem;
-  margin-top: 1rem;
-  color: #555;
+    font-style: italic;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    color: #555;
 }
 
-/* ===== Footer ===== */
+/* ===== Footer (Akan mengambil yang lebih baru untuk tampilan) ===== */
 /* Footer container: atur tampilan grid 4 kolom */
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  background-color: none; /* opsional: sesuai warna background pada gambar */
-  padding: 40px;
-  color: #fff;
-}
+/* .footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: none;
+    padding: 40px;
+    color: #fff;
+} */
 
 /* Setiap kolom di dalam footer */
-.footer-column {
-  flex: 1;
-  min-width: 200px;
-  margin: 10px;
-  text-align: left; /* pastikan rata kiri */
-}
+/* .footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+    text-align: left;
+} */
 
 /* Judul kolom */
-.footer-column h3 {
-  margin-bottom: 15px;
-  font-size: 18px;
-  color: #ccc;
-}
+/* .footer-column h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #ccc;
+} */
 
 /* List dalam kolom */
-.footer-column ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+/* .footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .footer-column ul li {
-  margin-bottom: 10px;
-  line-height: 1.6;
-}
+    margin-bottom: 10px;
+    line-height: 1.6;
+} */
 
 /* Style tautan dan ikon */
-.footer-column a {
-  color: #fff;
-  text-decoration: none;
+/* .footer-column a {
+    color: #fff;
+    text-decoration: none;
 }
 
 .footer-column a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .footer-column i {
-  margin-right: 8px;
-}
+    margin-right: 8px;
+} */
 
 /* Payment grid */
-.payment-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+/* .payment-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .payment-grid img {
-  height: 30px;
-  background: #fff;
-  padding: 5px;
-  border-radius: 5px;
-}
+    height: 30px;
+    background: #fff;
+    padding: 5px;
+    border-radius: 5px;
+} */
 
 
-/* Ikon media sosial */
+/* Ikon media sosial (Ini adalah bagian yang sudah ada sebelumnya) */
 .social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-  animation: fadeIn 1s ease;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    animation: fadeIn 1s ease;
 }
-.footer-column {
-  text-align: left;
-}
+
+/* footer-column sudah diatur ulang di bagian CSS baru, jadi ini mungkin tidak diperlukan */
+/* .footer-column {
+    text-align: left;
+} */
 
 .social-icons a {
-  color: white;
-  font-size: 2.5rem;
-  text-decoration: none;
-  transition: transform 0.3s ease, color 0.3s ease;
+    color: white;
+    font-size: 2.5rem;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .social-icons a:hover {
-  color: #00bfff;
-  transform: scale(1.1);
+    color: #00bfff;
+    transform: scale(1.1);
 }
+
 @media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+    /* .footer-container sudah diatur ulang di bagian CSS baru, jadi ini mungkin tidak diperlukan */
+    /* .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+    } */
 
-  .footer-column {
-    width: 100%;
-    margin-bottom: 20px;
-  }
+    /* .footer-column sudah diatur ulang di bagian CSS baru, jadi ini mungkin tidak diperlukan */
+    /* .footer-column {
+        width: 100%;
+        margin-bottom: 20px;
+    } */
 }
+ 
 
-
-
-
-
-
-
-/* Ikon pembayaran */
-.payment-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  justify-items: center;
-  align-items: center;
-  margin-top: 1rem;
+/* Ikon pembayaran (sudah diatur ulang di bagian CSS baru) */
+/* .payment-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    justify-items: center;
+    align-items: center;
+    margin-top: 1rem;
 }
 
 .payment-grid img {
-  width: 90px;
-  height: auto;
-  transition: transform 0.3s ease-in-out;
+    width: 90px;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
 }
 
 .payment-grid img:hover {
-  transform: scale(1.1);
-}
+    transform: scale(1.1);
+} */
 
 /* Animasi tambahan */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(30px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
+/* @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+} */
 
 
+/* Umum (Akan menggunakan versi yang lebih baru) */
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
 
-/* Umum */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* body {
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    color: #333;
+} */
 
-body {
-  font-family: Arial, sans-serif;
-  background: #f9f9f9;
-  color: #333;
-}
-
-/* Navigasi */
-nav {
-  background: #333;
-  padding: 1rem;
+/* Navigasi (Akan menggunakan versi yang lebih baru) */
+/* nav {
+    background: #333;
+    padding: 1rem;
 }
 
 nav ul {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  gap: 2rem;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 2rem;
 }
 
 nav ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 nav ul li a:hover,
 nav ul li a.active {
-  color: #00bfff;
-}
+    color: #00bfff;
+} */
 
 /* Header dan Carousel */
 header {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .carousel {
-  display: flex;
-  height: 100%;
-  width: 300%;
-  animation: slide 12s infinite;
+    display: flex;
+    height: 100%;
+    width: 300%;
+    animation: slide 12s infinite;
 }
 
 .carousel img {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
 }
 
 @keyframes slide {
-  0% { transform: translateX(0); }
-  33% { transform: translateX(-100vw); }
-  66% { transform: translateX(-200vw); }
-  100% { transform: translateX(0); }
+    0% {
+        transform: translateX(0);
+    }
+
+    33% {
+        transform: translateX(-100vw);
+    }
+
+    66% {
+        transform: translateX(-200vw);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
 
 /* Headline di atas carousel */
 .headline {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  background: rgba(0,0,0,0.5);
-  color: white;
-  padding: 2rem;
-  border-radius: 10px;
-  animation: fadeIn 2s ease-out forwards;
-  opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    animation: fadeIn 2s ease-out forwards;
+    opacity: 0;
 }
 
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
+/* @keyframes fadeIn (sudah didefinisikan sebelumnya, dan juga di bagian baru, yang baru akan dipakai) */
+/* @keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+} */
+
+
+/* ==== Bagian Umum (Ini adalah versi yang akan saya gunakan sebagai dasar) ==== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-
-
-/* ==== Bagian Umum ==== */
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-  background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6;
+    /* Warna latar belakang umum dari yang baru */
+    color: #333;
+    line-height: 1.6;
 }
 
-h2, h3 {
-  color: #333;
-  margin-bottom: 10px;
+
+h2,
+h3 {
+    color: #333;
+    margin-bottom: 10px;
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
+    text-decoration: none;
+    color: inherit;
 }
 
+/* Navigasi (Ambil versi yang baru untuk tampilan yang konsisten) */
 nav {
-  background-color: #003366;
-  padding: 10px 0;
+    background-color: #001f3f;
+    /* Warna biru tua untuk navbar */
+    padding: 15px 0;
+    text-align: center;
 }
 
 nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    /* Menggunakan flexbox untuk item navigasi */
+    justify-content: center;
+    /* Tengahkan item navigasi */
+    gap: 30px;
+    /* Jarak antar item navigasi */
 }
 
 nav ul li {
-  margin: 0 20px;
-}
-
+    margin: 0 20px;
+} 
 nav ul li a {
-  color: white;
-  font-weight: bold;
-  padding: 8px 15px;
-  border-radius: 5px;
-  transition: background 0.3s;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px; /* Padding yang lebih baik */
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 nav ul li a:hover,
 nav ul li a.active {
-  background-color: #005599;
+    background-color: #007bff;
+    /* Warna biru saat hover atau aktif */
+    color: #fff; /* Pastikan teks putih saat aktif/hover */
 }
+
+/* Kontainer (Ambil versi yang baru untuk tampilan yang konsisten) */
+.container {
+    max-width: 1200px;
+    /* Batasi lebar konten */
+    margin: 20px auto;
+    /* Tengahkan konten dengan margin atas/bawah */
+    padding: 0 20px;
+    /* Padding samping agar konten tidak menempel ke tepi */
+    /* text-align: center; (Hapus ini agar teks di dalam layanan-item tidak terpusat secara paksa) */
+}
+
 
 /* ==== Map Section ==== */
 .map-section h2 {
-  text-align: center;
-  margin: 40px 0 20px;
-  font-size: 24px;
+    text-align: center;
+    margin: 40px 0 20px;
+    font-size: 24px;
 }
 
 .map-section iframe {
-  width: 100%;
-  max-width: 1100px;
-  height: 450px;
-  border: 0;
-  display: block;
-  margin: 0 auto;
-  border-radius: 10px;
+    width: 100%;
+    max-width: 1100px;
+    height: 450px;
+    border: 0;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
 }
 
 
 /* ==== halaman kontak ==== */
 .contact-form-section {
-  background-color: transparent; /* Menghapus warna latar belakang */
-  padding: 0; /* Menghapus padding */
-  border-radius: 0; /* Menghapus border-radius */
-  margin: 0 auto 40px; /* Menyesuaikan margin */
-  max-width: 1200px;
-  box-shadow: none; /* Menghapus box-shadow */
+    background-color: transparent;
+    /* Menghapus warna latar belakang */
+    padding: 0;
+    /* Menghapus padding */
+    border-radius: 0;
+    /* Menghapus border-radius */
+    margin: 0 auto 40px;
+    /* Menyesuaikan margin */
+    max-width: 1200px;
+    box-shadow: none;
+    /* Menghapus box-shadow */
 }
 
 .contact-form-section form {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .contact-form-section form label {
-  margin: 10px 0 5px;
-  font-weight: bold;
+    margin: 10px 0 5px;
+    font-weight: bold;
 }
 
 .contact-form-section form input,
 .contact-form-section form textarea {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 14px;
-  margin-bottom: 10px;
-  resize: vertical;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    resize: vertical;
 }
 
 .contact-form-section form button {
-  padding: 12px;
-  background-color: #003366;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-top: 10px;
+    padding: 12px;
+    background-color: #003366;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
 }
 
 .contact-form-section form button:hover {
-  background-color: #005599;
+    background-color: #005599;
 }
 
 /* ==== Info Kontak (Sebelah Kanan) ==== */
 .contact-form-section div:last-child p {
-  margin: 6px 0;
+    margin: 6px 0;
 }
 
 .contact-form-section div:last-child h3 {
-  margin-top: 20px;
-  font-size: 18px;
-  color: #003366;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #003366;
 }
 
 /* ==== Responsif ==== */
 @media (max-width: 768px) {
-  .contact-form-section {
-    flex-direction: column;
-  }
+    .contact-form-section {
+        flex-direction: column;
+    }
 
-  .contact-form-section > div {
-    width: 100%;
-    margin-top: 20px;
-  }
+    .contact-form-section>div {
+        width: 100%;
+        margin-top: 20px;
+    }
 
-  .map-section iframe {
-    width: 100% !important;
-  }
+    .map-section iframe {
+        width: 100% !important;
+    }
 }
 
 /* Struktur dasar halaman */
-body, html {
-  height: 100%;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-body {
-  min-height: 100vh;
-}
+/* body, html (ini sudah diatur ulang dengan body di atas) */
+/* body {
+    min-height: 100vh;
+} */
 
 /* Konten utama */
 main {
-  flex: 1;
+    flex: 1;
 }
 
-/* Footer */
-footer {
-  background: linear-gradient(to bottom, #003366, #cccccc);
-  color: white;
-  padding: 20px;
-}
+/* Footer (Sudah diatur ulang di bagian footer yang baru) */
+/* footer {
+    background: linear-gradient(to bottom, #003366, #cccccc);
+    color: white;
+    padding: 20px;
+} */
 
-/* Halaman pelayanan */
+
+/* BAGIAN BARU: Layanan Pelayanan (City Car, Luxury Car, Family Car) */
+/* Catatan: Ada `.layanan-lanjutan` dan `.layanan-item` yang sudah ada, saya akan menimpa dengan yang baru. */
 .layanan-lanjutan {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 20px;
-  text-align: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+    display: flex;
+    /* Menggunakan flexbox untuk tata letak 3 kolom */
+    flex-wrap: wrap;
+    /* Izinkan wrap jika layar kecil */
+    justify-content: space-around;
+    /* Memberi ruang di antara item */
+    gap: 30px;
+    /* Jarak antar kolom */
+    margin-bottom: 40px;
+    /* Jarak bawah dari bagian ini */
+    margin-top: 40px;
+    /* Jarak atas dari navbar */
+    /* text-align: center; (Hapus ini karena sudah ada text-align di layanan-item) */
 }
 
 .layanan-item {
-  flex: 1 1 calc(33.333% - 20px);
-  box-sizing: border-box;
-  padding: 20px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Bayangan seperti pada gambar */
+    padding: 30px;
+    text-align: center;
+    flex: 1;
+    /* Biarkan item mengambil ruang yang tersedia */
+    min-width: 280px;
+    /* Lebar minimum untuk setiap item */
+    max-width: 350px;
+    /* Lebar maksimum untuk setiap item */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* max-width: 800%; (Hapus ini, karena terlalu besar) */
+    /* padding: 30px; (Sudah diatur di atas) */
+    /* box-sizing: border-box; (Sudah diatur di *) */
 }
 
 .layanan-item:hover {
-  transform: scale(1.03);
+    transform: translateY(-5px);
+    /* Efek naik saat di-hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    /* Bayangan lebih kuat saat di-hover */
 }
 
 .layanan-item h3 {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 10px;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 15px;
+    /* font-size: 20px; font-weight: bold; (Timpa dengan yang baru) */
 }
 
 .layanan-item p {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #444;
-  max-width: 300px;
-  margin: 0 auto 15px;
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    /* font-size: 14px; line-height: 1.6; color: #444; max-width: 300px; margin: 0 auto 15px; (Timpa dengan yang baru) */
 }
 
 .btn-layanan {
-  color: #007bff;
-  text-decoration: none;
-  font-weight: bold;
+    display: inline-block;
+    background-color: transparent;
+    /* Transparan */
+    color: #007bff;
+    /* Warna teks biru */
+    border: 1px solid #007bff;
+    /* Border biru */
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* font-weight: bold; (Sudah ada) */
 }
 
- 
-/* pelayanan untuk VEHICLES NETWORK AREA TRANSPORTATION SERVICES */
+.btn-layanan:hover {
+    background-color: #007bff;
+    /* Latar belakang biru saat hover */
+    color: #fff;
+    /* Teks putih saat hover */
+}
+
+
+/* BAGIAN BARU: Additional Services (Vehicles, Network Area, Transportation Services) */
+/* Catatan: Ada `.additional-services` dan `.service` yang sudah ada, saya akan menimpa dengan yang baru. */
 .additional-services {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  text-align: center;
-  padding: 4rem 2rem;
-  gap: 3rem;
+    display: flex;
+    /* Menggunakan flexbox untuk tata letak 3 kolom */
+    flex-wrap: wrap;
+    /* Izinkan wrap jika layar kecil */
+    justify-content: space-around;
+    /* Memberi ruang di antara item */
+    gap: 30px;
+    /* Jarak antar kolom */
+    margin-bottom: 60px;
+    /* Jarak bawah dari bagian ini */
+    padding: 40px 0;
+    /* Padding atas dan bawah */
+    /* text-align: center; (Hapus karena sudah ada text-align di .service) */
+    /* padding: 4rem 2rem; gap: 3rem; (Timpa dengan yang baru) */
 }
 
-.additional-services .service {
-  flex: 1;
-  min-width: 250px;
-  max-width: 300px;
+.service {
+    background-color: #fff;
+    /* Latar belakang putih untuk setiap service */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Bayangan */
+    padding: 30px;
+    text-align: center;
+    flex: 1;
+    /* Biarkan item mengambil ruang yang tersedia */
+    min-width: 280px;
+    /* Lebar minimum */
+    max-width: 350px;
+    /* Lebar maksimum */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* min-width: 250px; max-width: 300px; (Timpa dengan yang baru) */
 }
 
-.icon-circle {
-  width: 70px;
-  height: 70px;
-  background-color: #1a4ced;
-  color: white;
-  border-radius: 50%;
-  font-size: 2rem;
-  line-height: 70px;
-  margin: 0 auto 1rem;
+.service:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.service .icon-circle {
+    width: 60px;
+    height: 60px;
+    background-color: #007bff;
+    /* Warna biru untuk lingkaran ikon */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px;
+    /* Tengahkan ikon dan beri jarak bawah */
+    font-size: 30px;
+    color: #fff;
+    /* Warna ikon putih */
+    /* width: 70px; height: 70px; background-color: #1a4ced; font-size: 2rem; line-height: 70px; margin: 0 auto 1rem; (Timpa dengan yang baru) */
 }
 
 .additional-services h3 {
-  color: #0074cc;
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
+    color: #333;
+    font-size: 22px;
+    margin-bottom: 15px;
+    /* color: #0074cc; font-size: 1rem; margin-bottom: 0.5rem; (Timpa dengan yang baru) */
 }
 
 .additional-services p {
-  color: #555;
-  font-size: 0.95rem;
+    color: #666;
+    font-size: 15px;
+    line-height: 1.6;
+    /* color: #555; font-size: 0.95rem; (Timpa dengan yang baru) */
 }
 
-
-
-/* ===== Halaman Blog ===== */
-
-.layanan-lanjutan {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 20px;
-  text-align: center;
-}
-
-.layanan-item {
-  flex: 1;
-  min-width: 280px;
-  max-width: 32%;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-.layanan-item h3 {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.layanan-item p {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #444;
-  max-width: 300px;
-  margin: 0 auto 15px;
-}
-
-.btn-layanan {
-  color: #007bff;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-
-
-
-
-/* pelayanan untuk VEHICLES NETWORK AREA TRANSPORTATION SERVICES */
-.additional-services {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  text-align: center;
-  padding: 4rem 2rem;
-  gap: 3rem;
-}
-
-.additional-services .service {
-  flex: 1;
-  min-width: 250px;
-  max-width: 300px;
-}
-
-.icon-circle {
-  width: 70px;
-  height: 70px;
-  background-color: #1a4ced;
-  color: white;
-  border-radius: 50%;
-  font-size: 2rem;
-  line-height: 70px;
-  margin: 0 auto 1rem;
-}
-
-.additional-services h3 {
-  color: #0074cc;
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-}
-
-.additional-services p {
-  color: #555;
-  font-size: 0.95rem;
-}
-
+/* Footer (Ambil versi yang baru untuk tampilan yang konsisten) */
 footer {
-  clear: both;
-  z-index: 1;
-  position: relative;
+    background-color: #333;
+    /* Warna gelap untuk footer */
+    color: #fff;
+    padding: 40px 0;
+    font-size: 14px;
+    clear: both; /* Pertahankan ini agar footer di bawah konten float */
+    z-index: 1; /* Pertahankan ini */
+    position: relative; /* Pertahankan ini */
 }
 
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    gap: 30px;
+    /* Jarak antar kolom footer */
+}
 
-/* BLOG  */
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+    /* Lebar minimum kolom footer */
+    max-width: 280px;
+    /* Lebar maksimum kolom footer */
+    text-align: left;
+    /* Pastikan rata kiri */
+}
+
+.footer-column h3 {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #555;
+    /* Garis bawah untuk judul */
+    padding-bottom: 10px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.footer-column ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #007bff;
+}
+
+.footer-column p {
+    color: #ccc;
+    line-height: 1.5;
+}
+
+.footer-column .fab {
+    margin-right: 8px;
+    color: #007bff;
+    /* Warna ikon media sosial */
+}
+
+.payment-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 kolom */
+    gap: 15px;
+    /* Jarak antar gambar */
+    margin-top: 15px;
+}
+
+.payment-grid img {
+    max-width: 100px;
+    /* Atur ukuran gambar partner */
+    height: auto;
+    background-color: #fff;
+    /* Latar belakang putih untuk gambar logo pembayaran */
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Adjustments (Untuk keseluruhan tata letak) */
+@media (max-width: 992px) {
+
+    .layanan-lanjutan,
+    .additional-services,
+    .footer-container {
+        flex-direction: column;
+        /* Ubah menjadi kolom pada layar yang lebih kecil */
+        align-items: center;
+        /* Pusatkan item */
+    }
+
+    .layanan-item,
+    .service,
+    .footer-column {
+        max-width: 90%;
+        /* Ambil lebih banyak lebar pada layar kecil */
+        margin-bottom: 20px;
+        /* Tambah jarak bawah */
+    }
+
+    /* Penyesuaian navbar untuk mobile */
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .layanan-item,
+    .service,
+    .footer-column {
+        padding: 20px;
+    }
+
+    .layanan-item h3,
+    .service h3 {
+        font-size: 20px;
+    }
+
+    .layanan-item p,
+    .service p {
+        font-size: 14px;
+    }
+
+    .payment-grid {
+        grid-template-columns: repeat(1, 1fr);
+        /* 1 kolom pada layar sangat kecil */
+    }
+}
+
+/* BLOG */
 .blog-container {
-  padding: 40px 5%;
-  background-color: #fff;
+    padding: 40px 5%;
+    background-color: #fff;
 }
 
 .blog-container h1 {
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 2em;
-  color: #002f6c;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2em;
+    color: #002f6c;
 }
 
 .blog-section {
-  margin-bottom: 50px;
+    margin-bottom: 50px;
 }
 
 .blog-section h2 {
-  font-size: 1.5em;
-  color: #003f87;
-  margin-bottom: 20px;
+    font-size: 1.5em;
+    color: #003f87;
+    margin-bottom: 20px;
 }
 
 .blog-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
 }
 
 .blog-card {
-  background: #f9f9f9;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease;
+    background: #f9f9f9;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
 }
 
 .blog-card:hover {
-  transform: translateY(-5px);
+    transform: translateY(-5px);
 }
 
 .blog-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
 }
 
 .blog-card h3 {
-  margin: 15px;
-  font-size: 1.2em;
-  color: #002f6c;
+    margin: 15px;
+    font-size: 1.2em;
+    color: #002f6c;
 }
 
 .blog-card p {
-  margin: 0 15px 15px;
-  color: #555;
+    margin: 0 15px 15px;
+    color: #555;
 }
 
 .blog-card a {
-  display: block;
-  margin: 0 15px 15px;
-  color: #007BFF;
-  text-decoration: none;
-  font-weight: bold;
+    display: block;
+    margin: 0 15px 15px;
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
 }
-footer {
-  clear: both;
-  z-index: 1;
-  position: relative;
-}
+/* footer (sudah diatur ulang di bagian footer yang baru) */
+/* footer {
+    clear: both;
+    z-index: 1;
+    position: relative;
+} */
+
 
 /* ======================= INVOICE STYLE ======================= */
 
 .invoice-container {
-  max-width: 900px;
-  margin: 30px auto;
-  background: #ffffff;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  font-family: 'Segoe UI', sans-serif;
+    max-width: 900px;
+    margin: 30px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    font-family: 'Segoe UI', sans-serif;
 }
 
 .invoice-container h1,
 .invoice-container h2,
 .invoice-container h3 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #003366;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #003366;
 }
 
 .invoice-container table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
 }
 
 .invoice-container td,
 .invoice-container th {
-  padding: 12px;
-  vertical-align: top;
-  border-bottom: 1px solid #ddd;
+    padding: 12px;
+    vertical-align: top;
+    border-bottom: 1px solid #ddd;
 }
 
 .invoice-container .qr-section {
-  text-align: center;
-  margin: 30px 0;
+    text-align: center;
+    margin: 30px 0;
 }
 
 .invoice-container .qr-section img {
-  width: 200px;
-  height: 200px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+    width: 200px;
+    height: 200px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
 }
 
 .status-pending {
-  color: orange;
-  font-weight: bold;
+    color: orange;
+    font-weight: bold;
 }
 
 .status-unpaid {
-  color: red;
-  font-weight: bold;
+    color: red;
+    font-weight: bold;
 }
 
 .total-bayar {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #333;
-  margin-top: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
 }
 
 .btn-kembali {
-  display: inline-block;
-  margin-top: 20px;
-  background: #6c757d;
-  padding: 10px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  color: #fff;
-  transition: background 0.3s;
+    display: inline-block;
+    margin-top: 20px;
+    background: #6c757d;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #fff;
+    transition: background 0.3s;
 }
 
 .btn-kembali:hover {
-  background: #5a6268;
+    background: #5a6268;
 }
 
 .detail-rincian {
-  border-top: 1px solid #ddd;
-  padding-top: 15px;
-  margin-top: 15px;
+    border-top: 1px solid #ddd;
+    padding-top: 15px;
+    margin-top: 15px;
 }
 
 /* Tombol Upload */
 .upload-btn {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
 }
 
 .upload-btn:hover {
-  background-color: #0056b3;
+    background-color: #0056b3;
 }
 
 /* Batas waktu pembayaran */
 .batas-waktu {
-  color: #555;
-  font-style: italic;
-  margin-top: 5px;
+    color: #555;
+    font-style: italic;
+    margin-top: 5px;
 }
 
 /* ===================== ADMIN ===================== */
@@ -1045,105 +1234,109 @@ footer {
 
 .admin-table th,
 .admin-table td {
-  padding: 12px 15px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
 }
 
 .admin-table th,
 .admin-table td {
-  padding: 12px 15px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
 }
 
 .admin-table th {
-  background-color: #003366;
-  color: white;
+    background-color: #003366;
+    color: white;
 }
 
 .admin-table tr:hover {
-  background-color: #f1f1f1;
+    background-color: #f1f1f1;
 }
 
 .admin-actions button {
-  padding: 6px 10px;
-  margin-right: 5px;
-  font-size: 14px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+    padding: 6px 10px;
+    margin-right: 5px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 .admin-actions .edit-btn {
-  background-color: #007bff;
-  color: white;
+    background-color: #007bff;
+    color: white;
 }
 
 .admin-actions .edit-btn:hover {
-  background-color: #0056b3;
+    background-color: #0056b3;
 }
 
 .admin-actions .delete-btn {
-  background-color: #dc3545;
-  color: white;
+    background-color: #dc3545;
+    color: white;
 }
 
 .admin-actions .delete-btn:hover {
-  background-color: #b02a37;
+    background-color: #b02a37;
 }
+
 /* Gaya untuk ikon admin di navbar */
 .navbar-admin-icon {
-  font-size: 1.5rem; /* ukuran ikon */
+    font-size: 1.5rem;
+    /* ukuran ikon */
 }
+
 .navbar {
-  background-color: #003366;
-  padding: 1rem 2rem;
+    background-color: #003366;
+    padding: 1rem 2rem;
 }
 
 .nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .nav-left {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-  margin: 0;
-  padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-left li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
 .nav-left li a:hover,
 .nav-left li a.active {
-  color: #00bfff;
+    color: #00bfff;
 }
 
 .nav-right a {
-  color: white;
-  font-size: 1.8rem;
-  transition: color 0.3s;
+    color: white;
+    font-size: 1.8rem;
+    transition: color 0.3s;
 }
 
 .nav-right a:hover {
-  color: #00bfff;
+    color: #00bfff;
 }
 
-nav ul li a.active {
+/* Catatan: Ini adalah properti yang bertentangan dengan nav ul li a:hover di atas.
+   Saya akan memprioritaskan yang baru untuk konsistensi tampilan pelayanan.
+   Jika Anda ingin baris bawah kuning, Anda perlu menambahkan ini kembali dan mungkin
+   menyesuaikan selector agar hanya berlaku untuk navbar utama atau mengubah warna hover di nav di atas. */
+/* nav ul li a.active {
     color: #ffeb3b;
     border-bottom: 2px solid #fff;
-}
-
-
-
+} */
 
 
 .dashboard-wrapper {
@@ -1155,7 +1348,7 @@ nav ul li a.active {
 .profile-card {
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     padding: 30px;
     margin-bottom: 30px;
     text-align: center;
@@ -1192,7 +1385,8 @@ nav ul li a.active {
     border-collapse: collapse;
 }
 
-.rental-history th, .rental-history td {
+.rental-history th,
+.rental-history td {
     border: 1px solid #ddd;
     padding: 10px;
     text-align: center;
@@ -1219,47 +1413,35 @@ nav ul li a.active {
 
 
 /* Form login */
-.container {
-  max-width: 500px;
-  margin: 30px auto;
-  padding: 20px;
-  background: #fff;
-  border-radius: 8px;
+/* Catatan: .container sudah didefinisikan ulang di bagian yang baru, yang akan saya pertahankan. */
+/* .container {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+} */
+
+label {
+    display: block;
+    margin-top: 15px;
 }
 
-.contact-form-section input[type="email"],
-.contact-form-section input[type="password"] {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.upload-btn {
-  width: 100%;
-  padding: 10px;
-  background: #2196F3;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.upload-btn:hover {
-  background: #1976D2;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: #6c757d;
+    color: #fff;
 }
 
 .container-small {
-  max-width: 500px;
-  margin: 30px auto;
-  padding: 20px;
-  background: #fff;
-  border-radius: 8px;
-}
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+} 
