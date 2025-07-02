@@ -8,12 +8,11 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfileController;
-
-
+ 
 // Home
 Route::view('/', 'home');
 
- // Public pages
+// Public pages
 Route::view('/pelayanan', 'pelayanan');
 Route::view('/about', 'about');
 Route::view('/contact', 'contact');
@@ -22,8 +21,8 @@ Route::view('/blog', 'blog');
 // Rental
 Route::get('/rental', [RentalController::class, 'index'])->name('rental.index');
 
-// Invoice
-Route::get('/invoice', [InvoiceController::class, 'showInvoice'])->name('invoice.show');
+// ✅ Invoice (Static - tidak pakai ID, jika memang diperlukan)
+Route::get('/invoice', [InvoiceController::class, 'showInvoice'])->name('invoice.static'); // diperbaiki nama routenya
 
 // Auth: Register & Login
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register')->middleware('guest');
@@ -43,11 +42,15 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/user', [UserController::class, 'showUser'])->name('user.dashboard');
 
     // Simpan rental
+    Route::post('/rental/store', [RentalController::class, 'store']);
 
-Route::post('/rental/store', [RentalController::class, 'store'])->middleware('auth');
+    // ✅ Tampilkan invoice berdasarkan ID (dipakai untuk redirect setelah booking)
+    Route::get('/invoice/{id}', [RentalController::class, 'showInvoice'])->name('invoice.show');
 
-Route::get('/invoice/{id}', [RentalController::class, 'showInvoice'])->name('invoice.show');
+    // ✅ Konfirmasi pembayaran (POST)
+    Route::post('/rental/konfirmasi/{id}', [RentalController::class, 'konfirmasiPembayaran'])->name('rental.konfirmasi');
 
-
+    // ✅ Cetak invoice (GET)
+    Route::get('/rental/invoice/{id}/cetak', [RentalController::class, 'cetakInvoice'])->name('rental.cetakInvoice');
 });
-
+ 

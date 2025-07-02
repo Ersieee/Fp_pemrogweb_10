@@ -82,12 +82,25 @@ $batasWaktu = now()->addDay()->format('d M Y H:i') . ' WIB';
           </div>
         </div>
       </td>
-       <td class="qr-section" style="text-align:center;">
-        <h3>QRIS Pembayaran</h3>
-        <img src="{{ asset('images/qris.png') }}" alt="QRIS">
-        <p style="margin-top:10px;">Scan QR untuk bayar</p>
-        <a href="{{ route('rental.index') }}" class="btn-kembali">← Kembali ke Booking</a>
-      </td>
+      <td class="qr-section" style="text-align:center;">
+  <h3>QRIS Pembayaran</h3>
+  <img src="{{ asset('images/qris.png') }}" alt="QRIS">
+  <p style="margin-top:10px;">Scan QR untuk bayar</p>
+
+  {{-- Tombol Konfirmasi Pembayaran --}}
+  <form action="{{ route('rental.konfirmasi', $rental->id) }}" method="POST" style="margin-top: 10px;">
+    @csrf
+    <button type="submit" class="btn-kembali" style="background-color: #28a745;">✔ Sudah Bayar</button>
+  </form>
+
+  {{-- Tombol Kembali --}}
+  <a href="{{ route('rental.index') }}" class="btn-kembali" style="margin-top: 10px;">← Kembali ke Booking</a>
+
+  {{-- Tombol Cetak Invoice --}}
+  <a href="{{ route('rental.cetakInvoice', $rental->id) }}" class="btn-kembali" style="background-color:#007bff; margin-top: 10px;">🧾 Cetak Invoice</a>
+</td>
+
+
     </tr>
   </table>
  </div>
