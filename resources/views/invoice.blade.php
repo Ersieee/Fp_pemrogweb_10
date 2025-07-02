@@ -45,14 +45,14 @@
 <body>
 
 @php
-  // Ambil data dari query string
-  $mobil = request('mobil');
-  $harga = (int) request('harga');
-  $hari = (int) request('hari');
-  $total = (int) request('total');
-  $invoice = 'INV' . rand(100000000, 999999999);
-  $batasWaktu = now()->addDay()->format('d M Y H:i') . ' WIB';
+$mobil = $rental->tipe_mobil;
+$harga = $rental->total_harga / $rental->durasi;
+$hari = $rental->durasi;
+$total = $rental->total_harga;
+$invoice = 'INV' . str_pad($rental->id, 9, '0', STR_PAD_LEFT);
+$batasWaktu = now()->addDay()->format('d M Y H:i') . ' WIB';
 @endphp
+
 
 <div class="invoice-container">
   <h1>Terima Kasih!</h1>

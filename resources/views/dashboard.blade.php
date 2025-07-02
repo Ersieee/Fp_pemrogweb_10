@@ -1,5 +1,4 @@
-
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="id">
 <head>
     <meta charset="UTF-8">
@@ -13,23 +12,20 @@
 </head>
 
 <body>
-    <!-- Navigasi -->
+
     <nav>
-        <ul>
-                <li><a href="{{ url('/') }}" class="{{ Request::is('/') ? 'active' : '' }}"><i class="fas fa-home"></i> Home</a></li>
-<li><a href="{{ url('/rental') }}" class="{{ Request::is('rental') ? 'active' : '' }}"><i class="fas fa-car"></i> Rental</a></li>
-<li><a href="{{ url('/pelayanan') }}" class="{{ Request::is('pelayanan') ? 'active' : '' }}"><i class="fas fa-concierge-bell"></i> Pelayanan</a></li>
-<li><a href="{{ url('/about') }}" class="{{ Request::is('about') ? 'active' : '' }}"><i class="fas fa-users"></i> Tentang Kami</a></li>
-<li><a href="{{ url('/contact') }}" class="{{ Request::is('contact') ? 'active' : '' }}"><i class="fas fa-envelope"></i> Kontak</a></li>
-<li><a href="{{ url('/blog') }}" class="{{ Request::is('blog') ? 'active' : '' }}"><i class="fas fa-blog"></i> Blog</a></li>
-<li><a href="{{ route('user.dashboard') }}" class="{{ Request::is('user') ? 'active' : '' }}"><i class="fas fa-user"></i> </a></li>
+    <ul>
+     <li><a href="{{ url('/') }}" class="{{ Request::is('/') ? 'active' : '' }}"><i class="fas fa-home"></i> Home</a></li>
+     <li><a href="{{ url('/rental') }}" class="{{ Request::is('rental') ? 'active' : '' }}"><i class="fas fa-car"></i> Rental</a></li>
+     <li><a href="{{ url('/pelayanan') }}" class="{{ Request::is('pelayanan') ? 'active' : '' }}"><i class="fas fa-concierge-bell"></i> Pelayanan</a></li>
+     <li><a href="{{ url('/about') }}" class="{{ Request::is('about') ? 'active' : '' }}"><i class="fas fa-users"></i> Tentang Kami</a></li>
+     <li><a href="{{ url('/contact') }}" class="{{ Request::is('contact') ? 'active' : '' }}"><i class="fas fa-envelope"></i> Kontak</a></li>
+     <li><a href="{{ url('/blog') }}" class="{{ Request::is('blog') ? 'active' : '' }}"><i class="fas fa-blog"></i> Blog</a></li>
+      <li><a href="{{ route('user.dashboard') }}" class="{{ Request::is('user') ? 'active' : '' }}"><i class="fas fa-user"></i></a></li>
+    </ul>
+  </nav>
 
-
-
-        </ul>
-    </nav>
-
-   <div class="container user-dashboard">
+   <div class="container">
 
         <div class="dashboard-wrapper">
         <div class="profile-card">
@@ -39,12 +35,12 @@
                      alt="Foto Profil" class="profile-photo">
                 <div class="profile-info">
                    @if (Auth::check())
-  <p>Selamat datang, {{ Auth::user()->name }}</p>
-  <p><strong>Email:</strong> {{ Auth::user()->email }}</p>
-  <p><strong>No. Telepon:</strong> {{ Auth::user()->phone ?? 'Belum diisi' }}</p>
-@else
-  <p>Silakan login terlebih dahulu.</p>
-@endif
+                    <p>Selamat datang, {{ Auth::user()->name }}</p>
+                    <p><strong>Email:</strong> {{ Auth::user()->email }}</p>
+                    <p><strong>No. Telepon:</strong> {{ Auth::user()->phone ?? 'Belum diisi' }}</p>
+                        @else
+                    <p>Silakan login terlebih dahulu.</p>
+                        @endif
                 </div>
             </div>
 
@@ -64,7 +60,7 @@
                     </tr>
                 </thead>
                 <tbody>
-    @forelse ($riwayatPenyewaan as $rental)
+                     @forelse ($riwayatPenyewaan as $rental)
         <tr>
             <td>{{ \Carbon\Carbon::parse($rental->tanggal_sewa)->format('d-m-Y') }} {{ \Carbon\Carbon::parse($rental->jam_mulai)->format('H:i') }}</td>
             <td>{{ $rental->durasi }} jam</td>

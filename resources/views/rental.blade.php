@@ -82,7 +82,7 @@
 <li><a href="{{ url('/about') }}" class="{{ Request::is('about') ? 'active' : '' }}"><i class="fas fa-users"></i> Tentang Kami</a></li>
 <li><a href="{{ url('/contact') }}" class="{{ Request::is('contact') ? 'active' : '' }}"><i class="fas fa-envelope"></i> Kontak</a></li>
 <li><a href="{{ url('/blog') }}" class="{{ Request::is('blog') ? 'active' : '' }}"><i class="fas fa-blog"></i> Blog</a></li>
-   <li><a href="{{ route('user.dashboard') }}" class="{{ Request::is('user') ? 'active' : '' }}"><i class="fas fa-user"></i> Dashboard</a></li>
+   <li><a href="{{ route('user.dashboard') }}" class="{{ Request::is('user') ? 'active' : '' }}"><i class="fas fa-user"></i></a></li>
     </ul>
   </nav>
 
@@ -132,23 +132,25 @@
       <div class="bg-white p-6 rounded-lg max-w-md w-full relative overflow-y-auto max-h-screen">
         <button class="absolute top-2 right-4 text-2xl font-bold text-gray-500 hover:text-black" onclick="closeModal()">&times;</button>
         <h2 class="text-2xl font-bold mb-4">Form Penyewaan Mobil</h2>
-        <form action="{{ url('/invoice') }}" method="GET">
-          <label>Nama</label>
-          <input type="text" name="nama" id="nama" required class="w-full border p-2 rounded mb-3">
-          <label>Email</label>
-          <input type="email" name="email" id="email" required class="w-full border p-2 rounded mb-3">
-          <label>Tanggal Sewa</label>
-          <input type="date" name="tanggal" id="tanggal" required class="w-full border p-2 rounded mb-3">
-          <label>Jumlah Hari</label>
-          <input type="number" name="hari" id="hari" min="1" required class="w-full border p-2 rounded mb-3">
-          <label>Mobil</label>
-          <input type="text" name="mobil" id="mobil" readonly class="w-full border p-2 rounded mb-3 bg-gray-100">
-          <label>Harga per Hari (Rp)</label>
-          <input type="number" name="harga" id="harga" readonly class="w-full border p-2 rounded mb-3 bg-gray-100">
-          <label>Total Harga (Rp)</label>
-          <input type="number" name="total" id="total" readonly class="w-full border p-2 rounded mb-4 bg-gray-100">
-          <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Kirim</button>
-        </form>
+        <form action="{{ url('/rental/store') }}" method="POST">
+  @csrf
+  <label>Nama</label>
+  <input type="text" name="nama" id="nama" required class="w-full border p-2 rounded mb-3">
+  <label>Email</label>
+  <input type="email" name="email" id="email" required class="w-full border p-2 rounded mb-3">
+  <label>Tanggal Sewa</label>
+  <input type="date" name="tanggal_sewa" id="tanggal" required class="w-full border p-2 rounded mb-3">
+  <label>Jumlah Hari</label>
+  <input type="number" name="durasi" id="hari" min="1" required class="w-full border p-2 rounded mb-3">
+  <label>Mobil</label>
+  <input type="text" name="tipe_mobil" id="mobil" readonly class="w-full border p-2 rounded mb-3 bg-gray-100">
+  <label>Harga per Hari (Rp)</label>
+  <input type="number" name="harga" id="harga" readonly class="w-full border p-2 rounded mb-3 bg-gray-100">
+  <label>Total Harga (Rp)</label>
+  <input type="number" name="total_harga" id="total" readonly class="w-full border p-2 rounded mb-4 bg-gray-100">
+  <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Kirim</button>
+</form>
+
       </div>
     </div>
   </main>

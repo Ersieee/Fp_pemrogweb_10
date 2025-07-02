@@ -12,5 +12,10 @@ public function showUser()
     $riwayatPenyewaan = Rental::where('user_id', Auth::id())->get();
     return view('dashboard', compact('riwayatPenyewaan'));
 }
+public function rentals()
+{
+    return $this->hasMany(Rental::class);
+}
+
 
 }

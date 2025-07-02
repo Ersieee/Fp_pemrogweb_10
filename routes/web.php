@@ -43,6 +43,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/user', [UserController::class, 'showUser'])->name('user.dashboard');
 
     // Simpan rental
-    Route::post('/rental', [RentalController::class, 'store'])->name('rental.store');
+
+Route::post('/rental/store', [RentalController::class, 'store'])->middleware('auth');
+
+Route::get('/invoice/{id}', [RentalController::class, 'showInvoice'])->name('invoice.show');
+
+
 });
 
