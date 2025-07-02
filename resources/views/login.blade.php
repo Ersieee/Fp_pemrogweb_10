@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+<body>
 <nav>
     <ul>
         <li><a href="{{ url('/') }}" class="{{ Request::is('/') ? 'active' : '' }}"><i class="fas fa-home"></i> Home</a></li>
@@ -19,7 +20,7 @@
     </ul>
 </nav>
 
- <main class="container">
+<main class="container">
     <h2><i class="fas fa-sign-in-alt"></i> Form Login Pengguna</h2>
 
     {{-- BARU: Menampilkan pesan error sesi (misal: "Email atau password salah.") --}}
@@ -49,9 +50,10 @@
         <button type="submit" class="upload-btn">Login</button>
     </form>
 
-    <div class=""style="margin-bottom: 10px;">
+    {{-- PERUBAHAN DI SINI: Menambahkan class "auth-footer-text" --}}
+    <div class="auth-footer-text">
         <p>Belum punya akun? <a href="{{ route('register') }}" class="btn-layanan">Daftar Sekarang</a></p>
     </div>
 </main>
 </body>
-</html> 
+</html>
