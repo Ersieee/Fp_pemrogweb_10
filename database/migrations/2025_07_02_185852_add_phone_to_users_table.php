@@ -7,25 +7,28 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migrations.
+     * Jalankan migrasi.
      */
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            // Menambahkan kolom 'phone' setelah 'email'
-            // 'email' sudah ada di tabel 'users' bawaan Laravel
-            $table->string('phone')->nullable()->after('email');
+            // Tambahkan kolom 'phone' setelah 'email' jika belum ada
+            if (!Schema::hasColumn('users', 'phone')) {
+                $table->string('phone')->nullable()->after('email');
+            }
         });
     }
 
     /**
-     * Reverse the migrations.
+     * Kembalikan perubahan migrasi.
      */
     public function down(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            // Menghapus kolom 'phone' saat rollback
-            $table->dropColumn('phone');
+            // Hapus kolom 'phone' jika ada
+            if (Schema::hasColumn('users', 'phone')) {
+                $table->dropColumn('phone');
+            }
         });
     }
 };

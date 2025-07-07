@@ -11,10 +11,7 @@ return new class extends Migration
      */
     public function up()
     {
-        // Mengomentari bagian ini karena tabel 'rentals' kemungkinan sudah ada di database.
-        // Jika Anda ingin membuat ulang tabel ini (dan kehilangan data), gunakan 'php artisan migrate:fresh'.
-        // Jika Anda yakin tabel sudah ada dan strukturnya benar, biarkan bagian ini dikomentari.
-        /*
+
         Schema::create('rentals', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
@@ -25,7 +22,7 @@ return new class extends Migration
             $table->integer('total_harga');
             $table->timestamps();
         });
-        */
+    
     }
 
 

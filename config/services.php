@@ -35,4 +35,15 @@ return [
         ],
     ],
 
+    // ✅ Tambahkan konfigurasi Midtrans di sini
+    'midtrans' => [
+    'serverKey' => env('MIDTRANS_SERVER_KEY'),
+    'clientKey' => env('MIDTRANS_CLIENT_KEY'),
+    'isProduction' => env('MIDTRANS_IS_PRODUCTION', false), // ✅ fix
+    'isSanitized' => true,
+    'is3ds' => true,
+],
+
+
+
 ];

@@ -65,7 +65,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Jakarta',
 
     /*
     |--------------------------------------------------------------------------
@@ -122,5 +122,20 @@ return [
         'driver' => env('APP_MAINTENANCE_DRIVER', 'file'),
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Midtrans Configuration
+    |--------------------------------------------------------------------------
+    |
+    | These values are used to configure your Midtrans payment gateway.
+    | They are loaded from your .env file.
+    |
+    */
+    'midtrans_merchant_id' => env('MIDTRANS_MERCHANT_ID'),
+    'midtrans_client_key' => env('MIDTRANS_CLIENT_KEY'),
+    'midtrans_server_key' => env('MIDTRANS_SERVER_KEY'),
+    'midtrans_is_production' => env('MIDTRANS_IS_PRODUCTION', false), // Default ke false (sandbox)
+    'midtrans_sanity_check' => env('MIDTRANS_SANITY_CHECK', true),
 
 ];
