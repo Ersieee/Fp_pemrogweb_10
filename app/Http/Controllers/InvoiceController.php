@@ -3,21 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Rental;
 
 class InvoiceController extends Controller
 {
-    public function showInvoice(Request $request)
+    public function showInvoice($id)
     {
-        $mobil = $request->mobil;
-        $harga = $request->harga;
-        $total = $request->total;
+        $rental = Rental::findOrFail($id);
 
-        // Nomor invoice random
-        $invoice = 'INV' . rand(10000000, 99999999);
-
-        // Batas waktu pembayaran (24 jam dari sekarang)
+        $mobil = $rental->tipe_mobil;
+        $harga = $rental->total_harga / $rental->durasi;
+        $total = $rental->total_harga;
+        $invoice = 'INV' . str_pad($rental->id, 9, '0', STR_PAD_LEFT);
         $batasWaktu = now()->addDay()->format('d F Y, H:i') . ' WIB';
 
-        return view('invoice', compact('mobil', 'harga', 'total', 'invoice', 'batasWaktu'));
+        return view('invoice', compact('rental', 'mobil', 'harga', 'total', 'invoice', 'batasWaktu'));
     }
 }

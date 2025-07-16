@@ -19,7 +19,8 @@
         }
     </style>
 </head>
-<body class="about-page" style="display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #f0f2f5;">
+<body class="about-page" style="background-color: #f0f2f5;">
+
 
     <nav style="position: fixed; top: 0; width: 100%; z-index: 100;">
         <ul>
@@ -33,7 +34,8 @@
         </ul>
     </nav>
 
-    <form method="POST" action="{{ route('register') }}" class="bg-white p-6 rounded shadow-md w-96" style="margin-top: 80px;" enctype="multipart/form-data">
+    <form method="POST" action="{{ route('register') }}" class="bg-white p-6 rounded shadow-md w-96 mx-auto mt-28 mb-20" style="max-width: 400px;" enctype="multipart/form-data">
+
         @csrf
         <h2 class="text-xl font-semibold mb-4 text-center">Daftar Akun</h2>
 
@@ -350,4 +352,4 @@
 
 </script>
 </body>
-</html> 
+</html>
