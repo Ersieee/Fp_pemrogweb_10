@@ -61,12 +61,14 @@ $batasWaktu = now()->addDay()->format('d M Y H:i') . ' WIB';
    <table border="0">
     <tr>
       <td>
-        <h3>Detail Pembelian</h3>
-        <p>Produk: Sewa Mobil {{ $mobil ?? '-' }}</p>
-        <p><strong>Nomor Invoice:</strong> {{ $invoice }}</p>
-        <p>Status Transaksi: <strong style="color:orange">PENDING</strong></p>
-        <p>Status Pembayaran: <strong style="color:red">UNPAID</strong></p>
-        <p>Total Pembayaran: <strong>Rp {{ number_format($total, 0, ',', '.') }}</strong></p>
+        <h1>Invoice Penyewaan</h1>
+<p>Nama: {{ $nama }}</p>
+<p>Email: {{ $email }}</p>
+<p>Tanggal Sewa: {{ $tanggal }}</p>
+<p>Durasi (hari): {{ $hari }}</p>
+<p>Mobil: {{ $mobil }}</p>
+<p>Harga per hari: Rp{{ number_format($harga, 0, ',', '.') }}</p>
+<p>Total: Rp{{ number_format($total, 0, ',', '.') }}</p>
 
         <!-- Tombol untuk buka modal -->
         <button onclick="openModal()" class="btn-rincian">Rincian Pembayaran</button>

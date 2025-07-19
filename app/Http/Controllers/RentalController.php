@@ -1,103 +1,127 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Rental;
-use App\Models\Order;
-use Illuminate\Support\Facades\Log;
 use Midtrans\Config;
 use Midtrans\Snap;
-
+use Exception; // Tambahkan ini untuk menangkap Exception dengan lebih spesifik
 
 class RentalController extends Controller
 {
-    // ✅ Untuk halaman /rental
+    /**
+     * Menampilkan halaman daftar mobil rental.
+     * Kode HTML untuk daftar mobil akan berada di view.
+     */
     public function index()
     {
-        return view('rental');
+        return view('rental'); // Pastikan Anda memiliki resources/views/rental.blade.php
     }
 
-    // ✅ Menyimpan data rental & redirect ke in voice
-    public function store(Request $request)
+    /**
+     * Menginisiasi pembayaran menggunakan Midtrans Snap.
+     * Menerima data form rental dari frontend.
+     */
+    public function initiatePayment(Request $request)
     {
+        // 1. Validasi data yang masuk dari request
         $request->validate([
-            'nama' => 'required',
-            'email' => 'required|email',
-            'tanggal_sewa' => 'required|date',
-            'waktu_mulai' => 'required',
+            'nama' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'tanggal_sewa' => 'required|date|after_or_equal:today',
+            'waktu_mulai' => 'required|date_format:H:i',
             'durasi' => 'required|integer|min:1',
-            'tipe_mobil' => 'required',
-            'harga' => 'required|numeric',
-            'total_harga' => 'required|numeric',
+            'tipe_mobil' => 'required|string|max:255',
+            'harga' => 'required|numeric|min:0',
+            'total_harga' => 'required|numeric|min:0',
         ]);
 
+        // 2. Set konfigurasi Midtrans
+        Config::$serverKey = config('midtrans.server_key');
+        Config::$isProduction = config('midtrans.is_production');
+        Config::$isSanitized = config('midtrans.is_sanitized');
+        Config::$is3ds = config('midtrans.is_3ds');
+
+        // Untuk debug, Anda bisa log nilai-nilai ini ke laravel.log
+        \Log::info('DEBUG CHECK: Server Key being used: ' . Config::$serverKey);
+        \Log::info('DEBUG CHECK: Is Production flag: ' . (Config::$isProduction ? 'true' : 'false'));
+
+        // 3. Persiapkan detail transaksi untuk Midtrans
+        $orderId = 'RENTAL-' . time() . '-' . uniqid(); // Pastikan order ID unik
+
+        $transaction_details = [
+            'order_id' => $orderId,
+            'gross_amount' => $request->total_harga,
+        ];
+
+        $customer_details = [
+            'first_name' => $request->nama,
+            'email' => $request->email,
+            // Anda bisa tambahkan 'phone' jika ada di form
+            // 'phone' => $request->phone,
+        ];
+
+        $item_details = [
+            [
+                'id' => 'CAR-' . str_replace(' ', '-', strtolower($request->tipe_mobil)),
+                'name' => $request->tipe_mobil . ' Rental',
+                'price' => (int)$request->harga, // Pastikan integer
+                'quantity' => (int)$request->durasi, // Pastikan integer
+                'brand' => 'Pace Rental',
+                'category' => 'Car Rental',
+                'merchant_name' => 'Pace Rental',
+            ]
+        ];
+
+        // Gabungkan semua parameter
+        $params = [
+            'transaction_details' => $transaction_details,
+            'customer_details' => $customer_details,
+            'item_details' => $item_details,
+            // Opsional: callbacks untuk status pembayaran
+            // 'callbacks' => [
+            //     'finish' => url('/payment-finish'),
+            //     'unfinish' => url('/payment-unfinish'),
+            //     'error' => url('/payment-error'),
+            // ],
+        ];
+
         try {
-            // Simpan data rental ke database
-            $rental = Rental::create([
-                'nama' => $request->nama,
-                'email' => $request->email,
-                'tanggal_sewa' => $request->tanggal_sewa,
-                'waktu_mulai' => $request->waktu_mulai,
-                'durasi' => $request->durasi,
-                'tipe_mobil' => $request->tipe_mobil,
-                'harga' => $request->harga,
-                'total_harga' => $request->total_harga,
-            ]);
-
-            // Buat order untuk pembayaran
-            $order = Order::create([
-                'rental_id' => $rental->id,
-                'amount' => $rental->total_harga,
-                'status' => 'pending',
-            ]);
-
-            // ✅ Konfigurasi Midtrans
-            Config::$serverKey = config('services.midtrans.serverKey');
-            Config::$clientKey = config('services.midtrans.clientKey');
-            Config::$isProduction = config('services.midtrans.isProduction');
-            Config::$isSanitized = config('services.midtrans.isSanitized');
-            Config::$is3ds = config('services.midtrans.is3ds');
-
-            // Data transaksi Midtrans
-            $params = [
-                'transaction_details' => [
-                    'order_id' => 'ORDER-' . $order->id . '-' . time(),
-                    'gross_amount' => (int) $rental->total_harga,
-                ],
-                'customer_details' => [
-                    'first_name' => $rental->nama,
-                    'email' => $rental->email,
-                ],
-            ];
-
-            // Snap Token
+            // Dapatkan Snap Token dari Midtrans
             $snapToken = Snap::getSnapToken($params);
-            $order->snap_token = $snapToken;
-            $order->save();
 
-            // ✅ Redirect ke halaman invoice
-            return redirect()->route('invoice.show', $rental->id);
+            // TODO: (SANGAT PENTING!)
+            // Simpan detail rental ke database Anda di sini dengan status 'pending'.
+            // Order ID ($orderId) dari transaksi Midtrans harus disimpan di database
+            // agar Anda bisa melacak statusnya nanti melalui webhook atau manual check.
+            // Contoh:
+            // \App\Models\RentalOrder::create([
+            //     'order_id' => $orderId,
+            //     'customer_name' => $request->nama,
+            //     'customer_email' => $request->email,
+            //     'car_type' => $request->tipe_mobil,
+            //     'rental_date' => $request->tanggal_sewa,
+            //     'rental_duration' => $request->durasi,
+            //     'total_amount' => $request->total_harga,
+            //     'payment_status' => 'pending', // Atau 'created'
+            // ]);
 
-        } catch (\Exception $e) {
-            Log::error('Gagal menyimpan rental atau memulai pembayaran: ' . $e->getMessage(), [
-                'request_data' => $request->all()
-            ]);
-            return back()->with('error', 'Terjadi kesalahan. Silakan coba lagi.');
+            return response()->json(['snap_token' => $snapToken]);
+
+        } catch (Exception $e) {
+            // Log error lebih detail untuk debugging
+            \Log::error('Midtrans payment initiation error: ' . $e->getMessage(), ['exception' => $e, 'request_data' => $request->all()]);
+            // Kirim pesan error yang lebih informatif ke frontend
+            return response()->json([
+                'error' => 'Gagal memulai pembayaran: ' . $e->getMessage(),
+                'status_code' => $e->getCode(), // Jika ada kode status HTTP dari Midtrans
+                'response_body' => method_exists($e, 'getResponse') ? $e->getResponse() : null // Jika library Midtrans menangkap respons lengkap
+            ], 500);
         }
     }
 
-    // ✅ Menampilkan invoice berdasarkan ID rental
-    public function showInvoice($id)
-    {
-        $rental = Rental::findOrFail($id);
-
-        $mobil = $rental->tipe_mobil;
-        $harga = $rental->total_harga / $rental->durasi;
-        $total = $rental->total_harga;
-        $invoice = 'INV' . str_pad($rental->id, 9, '0', STR_PAD_LEFT);
-        $batasWaktu = now()->addDay()->format('d F Y, H:i') . ' WIB';
-
-        return view('invoice', compact('rental', 'mobil', 'harga', 'total', 'invoice', 'batasWaktu'));
-    }
+    // --- Opsional: Metode lain yang mungkin Anda miliki ---
+    // public function store(Request $request) { /* ... */ }
+    // public function showInvoice($id) { /* ... */ }
+    // public function konfirmasiPembayaran($id) { /* ... */ }
+    // public function cetakInvoice($id) { /* ... */ }
 }

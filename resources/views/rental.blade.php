@@ -5,21 +5,17 @@
     <title>Rental Mobil</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Font Awesome dari CDN aman -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <!-- Midtrans Snap JS -->
     <script type="text/javascript"
-    src="https://app.sandbox.midtrans.com/snap/snap.js"
-    data-client-key="{{ config('services.midtrans.clientKey') }}">
-</script>
+        src="https://app.sandbox.midtrans.com/snap/snap.js"
+        data-client-key="{{ config('midtrans.client_key') }}">
+    </script>
 </head>
 <body class="blog-page">
     <nav>
@@ -75,7 +71,6 @@
             @endforeach
         </div>
 
-        <!-- Modal Form -->
         <div id="sewaModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center overflow-auto">
             <div class="bg-white p-6 rounded-lg max-w-md w-full relative overflow-y-auto max-h-screen">
                 <button class="absolute top-2 right-4 text-2xl font-bold text-gray-500 hover:text-black" onclick="closeModal()">&times;</button>
@@ -125,7 +120,7 @@
                 <h3>Media Sosial</h3>
                 <ul>
                     <li><i class="fab fa-instagram"></i> <a href="#">@anugerah.x</a></li>
-                    <li><i class="fab fa-whatsapp"></i> <a href="#">+62 853-9911-1636</a></li>
+                    <li><i class="fab fa fa-whatsapp"></i> <a href="#">+62 853-9911-1636</a></li>
                     <li><i class="fab fa-facebook"></i> <a href="#">Pace_Rental</a></li>
                     <li><i class="fab fa-tiktok"></i> <a href="#">Anugerah.x</a></li>
                 </ul>
@@ -153,6 +148,14 @@
             document.getElementById('hari').value = '';
             document.getElementById('total').value = '';
             document.getElementById('sewaModal').classList.remove('hidden');
+
+            // Set today's date as min date for tanggal_sewa
+            const today = new Date();
+            const yyyy = today.getFullYear();
+            const mm = String(today.getMonth() + 1).padStart(2, '0'); // Months start at 0!
+            const dd = String(today.getDate()).padStart(2, '0');
+            document.getElementById('tanggal_sewa').min = `${yyyy}-${mm}-${dd}`;
+            document.getElementById('tanggal_sewa').value = `${yyyy}-${mm}-${dd}`; // Set default to today
         }
 
         function closeModal() {
@@ -173,8 +176,17 @@
                 data[key] = value;
             }
 
+            // Basic client-side validation
             if (!data.nama || !data.email || !data.tanggal_sewa || !data.waktu_mulai || !data.durasi || !data.tipe_mobil || !data.harga || !data.total_harga) {
                 alert('Mohon lengkapi semua data penyewaan.');
+                return;
+            }
+            if (parseInt(data.durasi) <= 0) {
+                alert('Jumlah Hari harus minimal 1.');
+                return;
+            }
+            if (parseInt(data.total_harga) <= 0) {
+                alert('Total Harga harus lebih dari 0.');
                 return;
             }
 
@@ -188,6 +200,12 @@
                     body: JSON.stringify(data)
                 });
 
+                if (!response.ok) {
+                    // Tangani respons non-OK (misalnya, 400, 500)
+                    const errorBody = await response.json();
+                    throw new Error(errorBody.error || `HTTP error! Status: ${response.status}`);
+                }
+
                 const result = await response.json();
 
                 if (result.snap_token) {
@@ -195,26 +213,27 @@
                     snap.pay(result.snap_token, {
                         onSuccess: function(midtransResult){
                             alert("Pembayaran berhasil!");
-                            window.location.href = '/order-status/' + midtransResult.order_id;
+                            // TODO: Di sini, Anda bisa mengirim hasil ke backend untuk update status di DB
+                            window.location.href = '{{ route('order.status', ['orderId' => '__ORDER_ID__']) }}'.replace('__ORDER_ID__', midtransResult.order_id);
                         },
                         onPending: function(midtransResult){
                             alert("Pembayaran sedang diproses!");
-                            window.location.href = '/order-status/' + midtransResult.order_id;
+                            window.location.href = '{{ route('order.status', ['orderId' => '__ORDER_ID__']) }}'.replace('__ORDER_ID__', midtransResult.order_id);
                         },
                         onError: function(midtransResult){
                             alert("Pembayaran gagal!");
-                            window.location.href = '/order-status/' + midtransResult.order_id;
+                            window.location.href = '{{ route('order.status', ['orderId' => '__ORDER_ID__']) }}'.replace('__ORDER_ID__', midtransResult.order_id);
                         },
                         onClose: function(){
                             alert('Anda menutup pop-up pembayaran.');
-                        }
+                             }
                     });
                 } else {
-                    alert('Gagal memulai pembayaran: ' + (result.error || 'Terjadi kesalahan tidak diketahui.'));
+                    alert('Gagal memulai pembayaran: Snap token tidak ditemukan.');
                 }
             } catch (error) {
                 console.error('Error:', error);
-                alert('Terjadi kesalahan jaringan atau server.');
+                alert('Terjadi kesalahan jaringan atau server: ' + error.message);
             }
         });
     </script>
